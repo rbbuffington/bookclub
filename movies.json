@@ -1,1186 +1,454 @@
 {
-  "updated": "2026-09-08T18:33:26.211Z",
+  "updated": "2026-09-08T18:33:42.935Z",
   "movies": [
     {
-      "title": "Mank",
+      "title": "Apex",
       "poster": "",
-      "link": "https://letterboxd.com/film/mank/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/apex-2026/",
+      "year": "2026"
     },
     {
-      "title": "Da 5 Bloods",
+      "title": "Toy Story 5",
       "poster": "",
-      "link": "https://letterboxd.com/film/da-5-bloods/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/toy-story-5/",
+      "year": "2026"
     },
     {
-      "title": "I'm Thinking of Ending Things (2020) ââÂ½",
+      "title": "Jackass: Best and Last",
       "poster": "",
-      "link": "https://letterboxd.com/film/im-thinking-of-ending-things/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/jackass-best-and-last/",
+      "year": "2026"
     },
     {
-      "title": "One Night in Miami...",
+      "title": "The Invite",
       "poster": "",
-      "link": "https://letterboxd.com/film/one-night-in-miami/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/the-invite-2026/",
+      "year": "2026"
     },
     {
-      "title": "The Trial of the Chicago 7",
+      "title": "Evil Dead Burn",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-trial-of-the-chicago-7/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/evil-dead-burn/",
+      "year": "2026"
     },
     {
-      "title": "Sound of Metal (2019) âââÂ½",
+      "title": "Disclosure Day",
       "poster": "",
-      "link": "https://letterboxd.com/film/sound-of-metal/",
-      "year": "2019"
+      "link": "https://letterboxd.com/film/disclosure-day/",
+      "year": "2026"
     },
     {
-      "title": "Judas and the Black Messiah",
+      "title": "Scary Movie",
       "poster": "",
-      "link": "https://letterboxd.com/film/judas-and-the-black-messiah/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/scary-movie-2026/",
+      "year": "2026"
     },
     {
-      "title": "Minari",
+      "title": "Backrooms",
       "poster": "",
-      "link": "https://letterboxd.com/film/minari/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/backrooms-2026/",
+      "year": "2026"
     },
     {
-      "title": "Nomadland (2020) âââÂ½",
+      "title": "The Sheep Detectives",
       "poster": "",
-      "link": "https://letterboxd.com/film/nomadland/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/the-sheep-detectives/",
+      "year": "2026"
     },
     {
-      "title": "Time",
+      "title": "Obsession",
       "poster": "",
-      "link": "https://letterboxd.com/film/time-2020/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/obsession-2025/",
+      "year": "2025"
     },
     {
-      "title": "Ma Rainey's Black Bottom (2020) âââÂ½",
+      "title": "Wuthering Heights",
       "poster": "",
-      "link": "https://letterboxd.com/film/ma-raineys-black-bottom/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/wuthering-heights-2026/",
+      "year": "2026"
     },
     {
-      "title": "Borat Subsequent Moviefilm: Delivery of Prodigious Bribe to American Regime for Make Benefit Once Glorious Nation of Kazakhstan (2020) ââÂ½",
+      "title": "Is God Is",
       "poster": "",
-      "link": "https://letterboxd.com/film/borat-subsequent-moviefilm-delivery-of-prodigious/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/is-god-is/",
+      "year": "2026"
     },
     {
-      "title": "The Invisible Man",
+      "title": "The Christophers",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-invisible-man-2020/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/the-christophers/",
+      "year": "2025"
     },
     {
-      "title": "Promising Young Woman",
+      "title": "Lee Cronin's The Mummy",
       "poster": "",
-      "link": "https://letterboxd.com/film/promising-young-woman/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/lee-cronins-the-mummy/",
+      "year": "2026"
     },
     {
-      "title": "The Father",
+      "title": "Nirvanna the Band the Show the Movie",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-father-2020/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/nirvanna-the-band-the-show-the-movie/",
+      "year": "2025"
     },
     {
-      "title": "The Vast of Night",
+      "title": "Project Hail Mary",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-vast-of-night/",
-      "year": "2019"
+      "link": "https://letterboxd.com/film/project-hail-mary/",
+      "year": "2026"
     },
     {
-      "title": "Synchronic",
+      "title": "The Drama",
       "poster": "",
-      "link": "https://letterboxd.com/film/synchronic/",
-      "year": "2019"
+      "link": "https://letterboxd.com/film/the-drama/",
+      "year": "2026"
     },
     {
-      "title": "I Care a Lot (2020) ââÂ½",
+      "title": "Hoppers",
       "poster": "",
-      "link": "https://letterboxd.com/film/i-care-a-lot/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/hoppers/",
+      "year": "2026"
     },
     {
-      "title": "Life Is Beautiful",
+      "title": "Wasteman",
       "poster": "",
-      "link": "https://letterboxd.com/film/life-is-beautiful/",
-      "year": "1997"
+      "link": "https://letterboxd.com/film/wasteman/",
+      "year": "2025"
     },
     {
-      "title": "Oldboy",
+      "title": "Mike & Nick & Nick & Alice",
       "poster": "",
-      "link": "https://letterboxd.com/film/oldboy/",
-      "year": "2003"
+      "link": "https://letterboxd.com/film/mike-nick-nick-alice/",
+      "year": "2026"
     },
     {
-      "title": "The Wild Bunch (1969) âââÂ½",
+      "title": "Good Luck, Have Fun, Don't Die",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-wild-bunch/",
-      "year": "1969"
+      "link": "https://letterboxd.com/film/good-luck-have-fun-dont-die/",
+      "year": "2025"
     },
     {
-      "title": "News of the World",
+      "title": "Crime 101",
       "poster": "",
-      "link": "https://letterboxd.com/film/news-of-the-world/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/crime-101/",
+      "year": "2026"
     },
     {
-      "title": "First Cow (2019) âââÂ½",
+      "title": "Send Help",
       "poster": "",
-      "link": "https://letterboxd.com/film/first-cow/",
-      "year": "2019"
+      "link": "https://letterboxd.com/film/send-help/",
+      "year": "2026"
     },
     {
-      "title": "Nobody (2021) âââÂ½",
+      "title": "Dead Man's Wire",
       "poster": "",
-      "link": "https://letterboxd.com/film/nobody-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/dead-mans-wire/",
+      "year": "2025"
     },
     {
-      "title": "The Mitchells vs. the Machines",
+      "title": "The Rip",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-mitchells-vs-the-machines/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/the-rip-2026/",
+      "year": "2026"
     },
     {
-      "title": "Barb & Star Go to Vista Del Mar (2021) ââÂ½",
+      "title": "Nouvelle Vague",
       "poster": "",
-      "link": "https://letterboxd.com/film/barb-star-go-to-vista-del-mar/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/nouvelle-vague-2025/",
+      "year": "2025"
     },
     {
-      "title": "No Sudden Move (2021) âââÂ½",
+      "title": "Roofman",
       "poster": "",
-      "link": "https://letterboxd.com/film/no-sudden-move/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/roofman/",
+      "year": "2025"
     },
     {
-      "title": "Pig",
+      "title": "Marty Supreme",
       "poster": "",
-      "link": "https://letterboxd.com/film/pig-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/marty-supreme/",
+      "year": "2025"
     },
     {
-      "title": "Bad Trip (2021) ââÂ½",
+      "title": "Hamnet",
       "poster": "",
-      "link": "https://letterboxd.com/film/bad-trip-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/hamnet/",
+      "year": "2025"
     },
     {
-      "title": "A Quiet Place Part II (2020) âââÂ½",
+      "title": "Sorry, Baby",
       "poster": "",
-      "link": "https://letterboxd.com/film/a-quiet-place-part-ii/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/sorry-baby-2025/",
+      "year": "2025"
     },
     {
-      "title": "Reminiscence (2021) ââÂ½",
+      "title": "Eternity",
       "poster": "",
-      "link": "https://letterboxd.com/film/reminiscence-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/eternity-2025-1/",
+      "year": "2025"
     },
     {
-      "title": "Raya and the Last Dragon",
+      "title": "Train Dreams",
       "poster": "",
-      "link": "https://letterboxd.com/film/raya-and-the-last-dragon/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/train-dreams/",
+      "year": "2025"
     },
     {
-      "title": "Zola (2020) âââÂ½",
+      "title": "Jay Kelly",
       "poster": "",
-      "link": "https://letterboxd.com/film/zola/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/jay-kelly/",
+      "year": "2025"
     },
     {
-      "title": "The Card Counter",
+      "title": "Wake Up Dead Man",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-card-counter/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/wake-up-dead-man/",
+      "year": "2025"
     },
     {
-      "title": "Freaky",
+      "title": "No Other Choice",
       "poster": "",
-      "link": "https://letterboxd.com/film/freaky/",
-      "year": "2020"
+      "link": "https://letterboxd.com/film/no-other-choice-2025/",
+      "year": "2025"
     },
     {
-      "title": "Candyman",
+      "title": "Bugonia",
       "poster": "",
-      "link": "https://letterboxd.com/film/candyman-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/bugonia/",
+      "year": "2025"
     },
     {
-      "title": "Annette (2021) ââââÂ½",
+      "title": "One Battle After Another (2025) ★★★★½",
       "poster": "",
-      "link": "https://letterboxd.com/film/annette/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/one-battle-after-another/",
+      "year": "2025"
     },
     {
-      "title": "The Power of the Dog",
+      "title": "Frankenstein",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-power-of-the-dog/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/frankenstein-2025/",
+      "year": "2025"
     },
     {
-      "title": "Dune (2021) âââÂ½",
+      "title": "The Smashing Machine",
       "poster": "",
-      "link": "https://letterboxd.com/film/dune-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/the-smashing-machine-2025/",
+      "year": "2025"
     },
     {
-      "title": "America: The Motion Picture (2021) âÂ½",
+      "title": "The Roses",
       "poster": "",
-      "link": "https://letterboxd.com/film/america-the-motion-picture/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/the-roses-2025/",
+      "year": "2025"
     },
     {
-      "title": "Saint Maud (2019) ââââÂ½",
+      "title": "The Long Walk",
       "poster": "",
-      "link": "https://letterboxd.com/film/saint-maud/",
-      "year": "2019"
+      "link": "https://letterboxd.com/film/the-long-walk-2025/",
+      "year": "2025"
     },
     {
-      "title": "In the Earth",
+      "title": "Together",
       "poster": "",
-      "link": "https://letterboxd.com/film/in-the-earth/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/together-2025/",
+      "year": "2025"
     },
     {
-      "title": "Last Night in Soho",
+      "title": "Caught Stealing",
       "poster": "",
-      "link": "https://letterboxd.com/film/last-night-in-soho/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/caught-stealing/",
+      "year": "2025"
     },
     {
-      "title": "The Harder They Fall",
+      "title": "Splitsville",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-harder-they-fall-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/splitsville/",
+      "year": "2025"
     },
     {
-      "title": "The French Dispatch of the Liberty, Kansas Evening Sun",
+      "title": "Weapons",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-french-dispatch-of-the-liberty-kansas/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/weapons-2025/",
+      "year": "2025"
     },
     {
-      "title": "Don't Look Up",
+      "title": "Highest 2 Lowest",
       "poster": "",
-      "link": "https://letterboxd.com/film/dont-look-up-2021/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/highest-2-lowest/",
+      "year": "2025"
     },
     {
-      "title": "Old Henry (2021) âââÂ½",
+      "title": "The Naked Gun",
       "poster": "",
-      "link": "https://letterboxd.com/film/old-henry/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/the-naked-gun/",
+      "year": "2025"
     },
     {
-      "title": "Belfast",
+      "title": "F1",
       "poster": "",
-      "link": "https://letterboxd.com/film/belfast/",
-      "year": "2021"
+      "link": "https://letterboxd.com/film/f1/",
+      "year": "2025"
     },
     {
-      "title": "The Tragedy of Macbeth",
+      "title": "Escape from the 21st Century",
       "poster": "",
-      "link": "https://letterboxd.com/film/the-tragedy-of-macbeth/",
-      "year": "2021"
-    },
-    {
-      "title": "The Worst Person in the World",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-worst-person-in-the-world/",
-      "year": "2021"
-    },
-    {
-      "title": "Encanto",
-      "poster": "",
-      "link": "https://letterboxd.com/film/encanto/",
-      "year": "2021"
-    },
-    {
-      "title": "Nightmare Alley",
-      "poster": "",
-      "link": "https://letterboxd.com/film/nightmare-alley-2021/",
-      "year": "2021"
-    },
-    {
-      "title": "Flee",
-      "poster": "",
-      "link": "https://letterboxd.com/film/flee-2021/",
-      "year": "2021"
-    },
-    {
-      "title": "The Eyes of Tammy Faye",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-eyes-of-tammy-faye-2021/",
-      "year": "2021"
-    },
-    {
-      "title": "West Side Story (2021) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/west-side-story-2021/",
-      "year": "2021"
-    },
-    {
-      "title": "King Richard (2021) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/king-richard/",
-      "year": "2021"
-    },
-    {
-      "title": "CODA (2021) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/coda-2021/",
-      "year": "2021"
-    },
-    {
-      "title": "C'mon C'mon",
-      "poster": "",
-      "link": "https://letterboxd.com/film/cmon-cmon/",
-      "year": "2021"
-    },
-    {
-      "title": "Windfall",
-      "poster": "",
-      "link": "https://letterboxd.com/film/windfall/",
-      "year": "2022"
-    },
-    {
-      "title": "Kimi",
-      "poster": "",
-      "link": "https://letterboxd.com/film/kimi/",
-      "year": "2022"
-    },
-    {
-      "title": "X",
-      "poster": "",
-      "link": "https://letterboxd.com/film/x-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "After Yang (2021) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/after-yang/",
-      "year": "2021"
-    },
-    {
-      "title": "Ambulance",
-      "poster": "",
-      "link": "https://letterboxd.com/film/ambulance-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Moonfall (2022) âÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/moonfall/",
-      "year": "2022"
-    },
-    {
-      "title": "Everything Everywhere All at Once (2022) ââââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/everything-everywhere-all-at-once/",
-      "year": "2022"
-    },
-    {
-      "title": "The Lost City (2022) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-lost-city-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Chip 'n Dale: Rescue Rangers",
-      "poster": "",
-      "link": "https://letterboxd.com/film/chip-n-dale-rescue-rangers/",
-      "year": "2022"
-    },
-    {
-      "title": "The Unbearable Weight of Massive Talent",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-unbearable-weight-of-massive-talent/",
-      "year": "2022"
-    },
-    {
-      "title": "Hustle (2022) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/hustle-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Good Luck to You, Leo Grande (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/good-luck-to-you-leo-grande/",
-      "year": "2022"
-    },
-    {
-      "title": "Cha Cha Real Smooth",
-      "poster": "",
-      "link": "https://letterboxd.com/film/cha-cha-real-smooth/",
-      "year": "2022"
-    },
-    {
-      "title": "Crimes of the Future (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/crimes-of-the-future-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Men",
-      "poster": "",
-      "link": "https://letterboxd.com/film/men-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Lightyear (2022) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/lightyear-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "The Black Phone (2021) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-black-phone/",
-      "year": "2021"
-    },
-    {
-      "title": "Fresh",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fresh-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Prey",
-      "poster": "",
-      "link": "https://letterboxd.com/film/prey-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "RRR",
-      "poster": "",
-      "link": "https://letterboxd.com/film/rrr/",
-      "year": "2022"
-    },
-    {
-      "title": "Nope",
-      "poster": "",
-      "link": "https://letterboxd.com/film/nope/",
-      "year": "2022"
-    },
-    {
-      "title": "Elvis",
-      "poster": "",
-      "link": "https://letterboxd.com/film/elvis-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Emily the Criminal (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/emily-the-criminal/",
-      "year": "2022"
-    },
-    {
-      "title": "Confess, Fletch",
-      "poster": "",
-      "link": "https://letterboxd.com/film/confess-fletch/",
-      "year": "2022"
-    },
-    {
-      "title": "Bullet Train",
-      "poster": "",
-      "link": "https://letterboxd.com/film/bullet-train/",
-      "year": "2022"
-    },
-    {
-      "title": "The Bob's Burgers Movie",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-bobs-burgers-movie/",
-      "year": "2022"
-    },
-    {
-      "title": "Fall (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fall-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Entergalactic",
-      "poster": "",
-      "link": "https://letterboxd.com/film/entergalactic/",
-      "year": "2022"
-    },
-    {
-      "title": "Pearl (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/pearl-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Smile",
-      "poster": "",
-      "link": "https://letterboxd.com/film/smile-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Weird: The Al Yankovic Story (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/weird-the-al-yankovic-story-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Fire of Love (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fire-of-love-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Vengeance (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/vengeance-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Watcher (2022) ââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/watcher/",
-      "year": "2022"
-    },
-    {
-      "title": "Werewolf by Night",
-      "poster": "",
-      "link": "https://letterboxd.com/film/werewolf-by-night/",
-      "year": "2022"
-    },
-    {
-      "title": "The Fabelmans (2022) âââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-fabelmans/",
-      "year": "2022"
-    },
-    {
-      "title": "Decision to Leave (2022) ââââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/decision-to-leave/",
-      "year": "2022"
-    },
-    {
-      "title": "The Banshees of Inisherin (2022) ââââÂ½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-banshees-of-inisherin/",
-      "year": "2022"
-    },
-    {
-      "title": "All Quiet on the Western Front",
-      "poster": "",
-      "link": "https://letterboxd.com/film/all-quiet-on-the-western-front-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Triangle of Sadness",
-      "poster": "",
-      "link": "https://letterboxd.com/film/triangle-of-sadness/",
-      "year": "2022"
-    },
-    {
-      "title": "Resurrection",
-      "poster": "",
-      "link": "https://letterboxd.com/film/resurrection-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Bones and All",
-      "poster": "",
-      "link": "https://letterboxd.com/film/bones-and-all/",
-      "year": "2022"
-    },
-    {
-      "title": "Guillermo del Toro's Pinocchio (2022) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/guillermo-del-toros-pinocchio/",
-      "year": "2022"
-    },
-    {
-      "title": "Babylon",
-      "poster": "",
-      "link": "https://letterboxd.com/film/babylon-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Women Talking",
-      "poster": "",
-      "link": "https://letterboxd.com/film/women-talking/",
-      "year": "2022"
-    },
-    {
-      "title": "Plane",
-      "poster": "",
-      "link": "https://letterboxd.com/film/plane-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Sick",
-      "poster": "",
-      "link": "https://letterboxd.com/film/sick-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Missing (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/missing-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Sharper (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/sharper/",
-      "year": "2023"
-    },
-    {
-      "title": "Tetris",
-      "poster": "",
-      "link": "https://letterboxd.com/film/tetris/",
-      "year": "2023"
-    },
-    {
-      "title": "Operation Fortune: Ruse de Guerre",
-      "poster": "",
-      "link": "https://letterboxd.com/film/operation-fortune-ruse-de-guerre/",
-      "year": "2023"
-    },
-    {
-      "title": "One Day as a Lion (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/one-day-as-a-lion/",
-      "year": "2023"
-    },
-    {
-      "title": "The Super Mario Bros. Movie",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-super-mario-bros-movie/",
-      "year": "2023"
-    },
-    {
-      "title": "Dungeons & Dragons: Honor Among Thieves (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/dungeons-dragons-honor-among-thieves/",
-      "year": "2023"
-    },
-    {
-      "title": "Renfield (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/renfield/",
-      "year": "2023"
-    },
-    {
-      "title": "Guy Ritchie's The Covenant",
-      "poster": "",
-      "link": "https://letterboxd.com/film/guy-ritchies-the-covenant/",
-      "year": "2023"
-    },
-    {
-      "title": "Sisu (2022) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/sisu-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "Fist of the Condor (2023) ★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fist-of-the-condor/",
-      "year": "2023"
-    },
-    {
-      "title": "BlackBerry",
-      "poster": "",
-      "link": "https://letterboxd.com/film/blackberry-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Somewhere in Queens",
-      "poster": "",
-      "link": "https://letterboxd.com/film/somewhere-in-queens/",
-      "year": "2022"
-    },
-    {
-      "title": "How to Blow Up a Pipeline (2022) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/how-to-blow-up-a-pipeline/",
-      "year": "2022"
-    },
-    {
-      "title": "About My Father",
-      "poster": "",
-      "link": "https://letterboxd.com/film/about-my-father/",
-      "year": "2023"
-    },
-    {
-      "title": "Nimona (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/nimona-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Asteroid City (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/asteroid-city/",
-      "year": "2023"
-    },
-    {
-      "title": "Beau Is Afraid (2023) ★★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/beau-is-afraid/",
-      "year": "2023"
-    },
-    {
-      "title": "They Cloned Tyrone (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/they-cloned-tyrone/",
-      "year": "2023"
-    },
-    {
-      "title": "The Starling Girl",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-starling-girl/",
-      "year": "2023"
-    },
-    {
-      "title": "No Hard Feelings",
-      "poster": "",
-      "link": "https://letterboxd.com/film/no-hard-feelings-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Spider-Man: Across the Spider-Verse",
-      "poster": "",
-      "link": "https://letterboxd.com/film/spider-man-across-the-spider-verse/",
-      "year": "2023"
-    },
-    {
-      "title": "Past Lives",
-      "poster": "",
-      "link": "https://letterboxd.com/film/past-lives/",
-      "year": "2023"
-    },
-    {
-      "title": "The Last Voyage of the Demeter (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-last-voyage-of-the-demeter/",
-      "year": "2023"
-    },
-    {
-      "title": "Talk to Me",
-      "poster": "",
-      "link": "https://letterboxd.com/film/talk-to-me-2022/",
-      "year": "2022"
-    },
-    {
-      "title": "The Boogeyman (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-boogeyman/",
-      "year": "2023"
-    },
-    {
-      "title": "No One Will Save You (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/no-one-will-save-you/",
-      "year": "2023"
-    },
-    {
-      "title": "Haunted Mansion",
-      "poster": "",
-      "link": "https://letterboxd.com/film/haunted-mansion-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Totally Killer",
-      "poster": "",
-      "link": "https://letterboxd.com/film/totally-killer/",
-      "year": "2023"
-    },
-    {
-      "title": "V/H/S/85",
-      "poster": "",
-      "link": "https://letterboxd.com/film/v-h-s-85/",
-      "year": "2023"
-    },
-    {
-      "title": "Evil Dead Rise",
-      "poster": "",
-      "link": "https://letterboxd.com/film/evil-dead-rise/",
-      "year": "2023"
-    },
-    {
-      "title": "Suitable Flesh (2023) ★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/suitable-flesh/",
-      "year": "2023"
-    },
-    {
-      "title": "The Killer",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-killer-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "The Burial",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-burial/",
-      "year": "2023"
-    },
-    {
-      "title": "Fair Play",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fair-play-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "The Holdovers",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-holdovers/",
-      "year": "2023"
-    },
-    {
-      "title": "May December",
-      "poster": "",
-      "link": "https://letterboxd.com/film/may-december/",
-      "year": "2023"
-    },
-    {
-      "title": "Leave the World Behind (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/leave-the-world-behind-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Thanksgiving (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/thanksgiving-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Maestro (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/maestro-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Rebel Moon – Part One: A Child of Fire (2023) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/rebel-moon-part-one-a-child-of-fire/",
-      "year": "2023"
-    },
-    {
-      "title": "Napoleon",
-      "poster": "",
-      "link": "https://letterboxd.com/film/napoleon-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Dream Scenario (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/dream-scenario/",
-      "year": "2023"
-    },
-    {
-      "title": "Saltburn (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/saltburn/",
-      "year": "2023"
-    },
-    {
-      "title": "Head Count",
-      "poster": "",
-      "link": "https://letterboxd.com/film/head-count-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "American Fiction (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/american-fiction/",
-      "year": "2023"
-    },
-    {
-      "title": "The Iron Claw (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-iron-claw-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "The Zone of Interest",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-zone-of-interest/",
-      "year": "2023"
-    },
-    {
-      "title": "Poor Things (2023) ★★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/poor-things-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "Drive-Away Dolls",
-      "poster": "",
-      "link": "https://letterboxd.com/film/drive-away-dolls/",
+      "link": "https://letterboxd.com/film/escape-from-the-21st-century/",
       "year": "2024"
     },
     {
-      "title": "Self Reliance",
+      "title": "Eddington",
       "poster": "",
-      "link": "https://letterboxd.com/film/self-reliance/",
+      "link": "https://letterboxd.com/film/eddington/",
+      "year": "2025"
+    },
+    {
+      "title": "Jurassic World Rebirth",
+      "poster": "",
+      "link": "https://letterboxd.com/film/jurassic-world-rebirth/",
+      "year": "2025"
+    },
+    {
+      "title": "Psycho Therapy: The Shallow Tale of a Writer Who Decided to Write About a Serial Killer",
+      "poster": "",
+      "link": "https://letterboxd.com/film/psycho-therapy-the-shallow-tale-of-a-writer/",
+      "year": "2024"
+    },
+    {
+      "title": "The Surfer",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-surfer-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Thunderbolts*",
+      "poster": "",
+      "link": "https://letterboxd.com/film/thunderbolts/",
+      "year": "2025"
+    },
+    {
+      "title": "Ballerina",
+      "poster": "",
+      "link": "https://letterboxd.com/film/ballerina-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "The Phoenician Scheme",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-phoenician-scheme/",
+      "year": "2025"
+    },
+    {
+      "title": "Friendship",
+      "poster": "",
+      "link": "https://letterboxd.com/film/friendship-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Predator: Killer of Killers",
+      "poster": "",
+      "link": "https://letterboxd.com/film/predator-killer-of-killers/",
+      "year": "2025"
+    },
+    {
+      "title": "Havoc",
+      "poster": "",
+      "link": "https://letterboxd.com/film/havoc-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "Fountain of Youth",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fountain-of-youth-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "Mickey 17",
+      "poster": "",
+      "link": "https://letterboxd.com/film/mickey-17/",
+      "year": "2025"
+    },
+    {
+      "title": "Warfare (2025) ★★½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/warfare/",
+      "year": "2025"
+    },
+    {
+      "title": "Drop",
+      "poster": "",
+      "link": "https://letterboxd.com/film/drop-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "Freaky Tales (2024) ★★½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/freaky-tales/",
+      "year": "2024"
+    },
+    {
+      "title": "The Monkey",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-monkey-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "Novocaine (2025) ★★★½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/novocaine-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "Magazine Dreams",
+      "poster": "",
+      "link": "https://letterboxd.com/film/magazine-dreams/",
       "year": "2023"
     },
     {
-      "title": "Road House",
+      "title": "One of Them Days (2025) ★★★½",
       "poster": "",
-      "link": "https://letterboxd.com/film/road-house-2024/",
+      "link": "https://letterboxd.com/film/one-of-them-days/",
+      "year": "2025"
+    },
+    {
+      "title": "Heart Eyes",
+      "poster": "",
+      "link": "https://letterboxd.com/film/heart-eyes/",
+      "year": "2025"
+    },
+    {
+      "title": "Presence (2024) ★★½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/presence-2024/",
       "year": "2024"
     },
     {
-      "title": "Madame Web (2024) ★½",
+      "title": "Companion",
       "poster": "",
-      "link": "https://letterboxd.com/film/madame-web/",
+      "link": "https://letterboxd.com/film/companion-2025/",
+      "year": "2025"
+    },
+    {
+      "title": "The Brutalist",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-brutalist/",
       "year": "2024"
     },
     {
-      "title": "Sleeping Dogs",
+      "title": "Nickel Boys",
       "poster": "",
-      "link": "https://letterboxd.com/film/sleeping-dogs-2024/",
+      "link": "https://letterboxd.com/film/nickel-boys/",
       "year": "2024"
     },
     {
-      "title": "Ricky Stanicky",
+      "title": "Babygirl",
       "poster": "",
-      "link": "https://letterboxd.com/film/ricky-stanicky/",
+      "link": "https://letterboxd.com/film/babygirl-2024/",
       "year": "2024"
     },
     {
-      "title": "Monkey Man (2024) ★★★½",
+      "title": "Wicked",
       "poster": "",
-      "link": "https://letterboxd.com/film/monkey-man/",
-      "year": "2024"
-    },
-    {
-      "title": "Late Night with the Devil (2023) ★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/late-night-with-the-devil/",
-      "year": "2023"
-    },
-    {
-      "title": "Abigail (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/abigail-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Arcadian (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/arcadian/",
-      "year": "2024"
-    },
-    {
-      "title": "Challengers",
-      "poster": "",
-      "link": "https://letterboxd.com/film/challengers/",
-      "year": "2024"
-    },
-    {
-      "title": "The Fall Guy (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-fall-guy-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "The Last Stop in Yuma County",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-last-stop-in-yuma-county/",
-      "year": "2023"
-    },
-    {
-      "title": "Hit Man (2023) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/hit-man-2023/",
-      "year": "2023"
-    },
-    {
-      "title": "I Saw the TV Glow (2024) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/i-saw-the-tv-glow/",
-      "year": "2024"
-    },
-    {
-      "title": "The First Omen",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-first-omen/",
-      "year": "2024"
-    },
-    {
-      "title": "Prey",
-      "poster": "",
-      "link": "https://letterboxd.com/film/prey-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "The Bikeriders",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-bikeriders/",
-      "year": "2023"
-    },
-    {
-      "title": "Beverly Hills Cop: Axel F (2024) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/beverly-hills-cop-axel-f/",
-      "year": "2024"
-    },
-    {
-      "title": "La Chimera",
-      "poster": "",
-      "link": "https://letterboxd.com/film/la-chimera/",
-      "year": "2023"
-    },
-    {
-      "title": "A Quiet Place: Day One",
-      "poster": "",
-      "link": "https://letterboxd.com/film/a-quiet-place-day-one/",
-      "year": "2024"
-    },
-    {
-      "title": "MaXXXine (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/maxxxine/",
-      "year": "2024"
-    },
-    {
-      "title": "Kill",
-      "poster": "",
-      "link": "https://letterboxd.com/film/kill-2023-1/",
-      "year": "2023"
-    },
-    {
-      "title": "Inside Out 2 (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/inside-out-2-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Longlegs",
-      "poster": "",
-      "link": "https://letterboxd.com/film/longlegs/",
-      "year": "2024"
-    },
-    {
-      "title": "Trap (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/trap-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Rebel Ridge (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/rebel-ridge/",
-      "year": "2024"
-    },
-    {
-      "title": "Fly Me to the Moon",
-      "poster": "",
-      "link": "https://letterboxd.com/film/fly-me-to-the-moon-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Speak No Evil (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/speak-no-evil-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Strange Darling (2023) ★★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/strange-darling/",
-      "year": "2023"
-    },
-    {
-      "title": "The Substance",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-substance/",
-      "year": "2024"
-    },
-    {
-      "title": "Oddity (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/oddity-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "It's What's Inside",
-      "poster": "",
-      "link": "https://letterboxd.com/film/its-whats-inside/",
-      "year": "2024"
-    },
-    {
-      "title": "A Different Man (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/a-different-man/",
-      "year": "2024"
-    },
-    {
-      "title": "Megalopolis",
-      "poster": "",
-      "link": "https://letterboxd.com/film/megalopolis-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Caddo Lake",
-      "poster": "",
-      "link": "https://letterboxd.com/film/caddo-lake/",
-      "year": "2024"
-    },
-    {
-      "title": "The Wild Robot (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/the-wild-robot/",
-      "year": "2024"
-    },
-    {
-      "title": "Conclave",
-      "poster": "",
-      "link": "https://letterboxd.com/film/conclave/",
-      "year": "2024"
-    },
-    {
-      "title": "Heretic",
-      "poster": "",
-      "link": "https://letterboxd.com/film/heretic-2024/",
-      "year": "2024"
-    },
-    {
-      "title": "Anora (2024) ★★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/anora/",
-      "year": "2024"
-    },
-    {
-      "title": "Juror #2 (2024) ★★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/juror-2/",
-      "year": "2024"
-    },
-    {
-      "title": "Gladiator II (2024) ★★½",
-      "poster": "",
-      "link": "https://letterboxd.com/film/gladiator-ii/",
-      "year": "2024"
-    },
-    {
-      "title": "A Real Pain",
-      "poster": "",
-      "link": "https://letterboxd.com/film/a-real-pain/",
+      "link": "https://letterboxd.com/film/wicked-2024/",
       "year": "2024"
     },
     {
@@ -1190,16 +458,1186 @@
       "year": "2023"
     },
     {
-      "title": "Wicked",
+      "title": "A Real Pain",
       "poster": "",
-      "link": "https://letterboxd.com/film/wicked-2024/",
+      "link": "https://letterboxd.com/film/a-real-pain/",
       "year": "2024"
     },
     {
-      "title": "Babygirl",
+      "title": "Gladiator II (2024) ââÂ½",
       "poster": "",
-      "link": "https://letterboxd.com/film/babygirl-2024/",
+      "link": "https://letterboxd.com/film/gladiator-ii/",
       "year": "2024"
+    },
+    {
+      "title": "Juror #2 (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/juror-2/",
+      "year": "2024"
+    },
+    {
+      "title": "Anora (2024) ââââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/anora/",
+      "year": "2024"
+    },
+    {
+      "title": "Heretic",
+      "poster": "",
+      "link": "https://letterboxd.com/film/heretic-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Conclave",
+      "poster": "",
+      "link": "https://letterboxd.com/film/conclave/",
+      "year": "2024"
+    },
+    {
+      "title": "The Wild Robot (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-wild-robot/",
+      "year": "2024"
+    },
+    {
+      "title": "Caddo Lake",
+      "poster": "",
+      "link": "https://letterboxd.com/film/caddo-lake/",
+      "year": "2024"
+    },
+    {
+      "title": "Megalopolis",
+      "poster": "",
+      "link": "https://letterboxd.com/film/megalopolis-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "A Different Man (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/a-different-man/",
+      "year": "2024"
+    },
+    {
+      "title": "It's What's Inside",
+      "poster": "",
+      "link": "https://letterboxd.com/film/its-whats-inside/",
+      "year": "2024"
+    },
+    {
+      "title": "Oddity (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/oddity-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "The Substance",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-substance/",
+      "year": "2024"
+    },
+    {
+      "title": "Strange Darling (2023) ââââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/strange-darling/",
+      "year": "2023"
+    },
+    {
+      "title": "Speak No Evil (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/speak-no-evil-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Fly Me to the Moon",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fly-me-to-the-moon-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Rebel Ridge (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/rebel-ridge/",
+      "year": "2024"
+    },
+    {
+      "title": "Trap (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/trap-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Longlegs",
+      "poster": "",
+      "link": "https://letterboxd.com/film/longlegs/",
+      "year": "2024"
+    },
+    {
+      "title": "Inside Out 2 (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/inside-out-2-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Kill",
+      "poster": "",
+      "link": "https://letterboxd.com/film/kill-2023-1/",
+      "year": "2023"
+    },
+    {
+      "title": "MaXXXine (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/maxxxine/",
+      "year": "2024"
+    },
+    {
+      "title": "A Quiet Place: Day One",
+      "poster": "",
+      "link": "https://letterboxd.com/film/a-quiet-place-day-one/",
+      "year": "2024"
+    },
+    {
+      "title": "La Chimera",
+      "poster": "",
+      "link": "https://letterboxd.com/film/la-chimera/",
+      "year": "2023"
+    },
+    {
+      "title": "Beverly Hills Cop: Axel F (2024) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/beverly-hills-cop-axel-f/",
+      "year": "2024"
+    },
+    {
+      "title": "The Bikeriders",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-bikeriders/",
+      "year": "2023"
+    },
+    {
+      "title": "Prey",
+      "poster": "",
+      "link": "https://letterboxd.com/film/prey-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "The First Omen",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-first-omen/",
+      "year": "2024"
+    },
+    {
+      "title": "I Saw the TV Glow (2024) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/i-saw-the-tv-glow/",
+      "year": "2024"
+    },
+    {
+      "title": "Hit Man (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/hit-man-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "The Last Stop in Yuma County",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-last-stop-in-yuma-county/",
+      "year": "2023"
+    },
+    {
+      "title": "The Fall Guy (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-fall-guy-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Challengers",
+      "poster": "",
+      "link": "https://letterboxd.com/film/challengers/",
+      "year": "2024"
+    },
+    {
+      "title": "Arcadian (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/arcadian/",
+      "year": "2024"
+    },
+    {
+      "title": "Abigail (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/abigail-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Late Night with the Devil (2023) âÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/late-night-with-the-devil/",
+      "year": "2023"
+    },
+    {
+      "title": "Monkey Man (2024) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/monkey-man/",
+      "year": "2024"
+    },
+    {
+      "title": "Ricky Stanicky",
+      "poster": "",
+      "link": "https://letterboxd.com/film/ricky-stanicky/",
+      "year": "2024"
+    },
+    {
+      "title": "Sleeping Dogs",
+      "poster": "",
+      "link": "https://letterboxd.com/film/sleeping-dogs-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Madame Web (2024) âÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/madame-web/",
+      "year": "2024"
+    },
+    {
+      "title": "Road House",
+      "poster": "",
+      "link": "https://letterboxd.com/film/road-house-2024/",
+      "year": "2024"
+    },
+    {
+      "title": "Self Reliance",
+      "poster": "",
+      "link": "https://letterboxd.com/film/self-reliance/",
+      "year": "2023"
+    },
+    {
+      "title": "Drive-Away Dolls",
+      "poster": "",
+      "link": "https://letterboxd.com/film/drive-away-dolls/",
+      "year": "2024"
+    },
+    {
+      "title": "Poor Things (2023) ââââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/poor-things-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "The Zone of Interest",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-zone-of-interest/",
+      "year": "2023"
+    },
+    {
+      "title": "The Iron Claw (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-iron-claw-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "American Fiction (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/american-fiction/",
+      "year": "2023"
+    },
+    {
+      "title": "Head Count",
+      "poster": "",
+      "link": "https://letterboxd.com/film/head-count-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Saltburn (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/saltburn/",
+      "year": "2023"
+    },
+    {
+      "title": "Dream Scenario (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/dream-scenario/",
+      "year": "2023"
+    },
+    {
+      "title": "Napoleon",
+      "poster": "",
+      "link": "https://letterboxd.com/film/napoleon-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Rebel Moon â Part One: A Child of Fire (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/rebel-moon-part-one-a-child-of-fire/",
+      "year": "2023"
+    },
+    {
+      "title": "Maestro (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/maestro-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Thanksgiving (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/thanksgiving-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Leave the World Behind (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/leave-the-world-behind-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "May December",
+      "poster": "",
+      "link": "https://letterboxd.com/film/may-december/",
+      "year": "2023"
+    },
+    {
+      "title": "The Holdovers",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-holdovers/",
+      "year": "2023"
+    },
+    {
+      "title": "Fair Play",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fair-play-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "The Burial",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-burial/",
+      "year": "2023"
+    },
+    {
+      "title": "The Killer",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-killer-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Suitable Flesh (2023) âÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/suitable-flesh/",
+      "year": "2023"
+    },
+    {
+      "title": "Evil Dead Rise",
+      "poster": "",
+      "link": "https://letterboxd.com/film/evil-dead-rise/",
+      "year": "2023"
+    },
+    {
+      "title": "V/H/S/85",
+      "poster": "",
+      "link": "https://letterboxd.com/film/v-h-s-85/",
+      "year": "2023"
+    },
+    {
+      "title": "Totally Killer",
+      "poster": "",
+      "link": "https://letterboxd.com/film/totally-killer/",
+      "year": "2023"
+    },
+    {
+      "title": "Haunted Mansion",
+      "poster": "",
+      "link": "https://letterboxd.com/film/haunted-mansion-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "No One Will Save You (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/no-one-will-save-you/",
+      "year": "2023"
+    },
+    {
+      "title": "The Boogeyman (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-boogeyman/",
+      "year": "2023"
+    },
+    {
+      "title": "Talk to Me",
+      "poster": "",
+      "link": "https://letterboxd.com/film/talk-to-me-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "The Last Voyage of the Demeter (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-last-voyage-of-the-demeter/",
+      "year": "2023"
+    },
+    {
+      "title": "Past Lives",
+      "poster": "",
+      "link": "https://letterboxd.com/film/past-lives/",
+      "year": "2023"
+    },
+    {
+      "title": "Spider-Man: Across the Spider-Verse",
+      "poster": "",
+      "link": "https://letterboxd.com/film/spider-man-across-the-spider-verse/",
+      "year": "2023"
+    },
+    {
+      "title": "No Hard Feelings",
+      "poster": "",
+      "link": "https://letterboxd.com/film/no-hard-feelings-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "The Starling Girl",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-starling-girl/",
+      "year": "2023"
+    },
+    {
+      "title": "They Cloned Tyrone (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/they-cloned-tyrone/",
+      "year": "2023"
+    },
+    {
+      "title": "Beau Is Afraid (2023) ââââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/beau-is-afraid/",
+      "year": "2023"
+    },
+    {
+      "title": "Asteroid City (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/asteroid-city/",
+      "year": "2023"
+    },
+    {
+      "title": "Nimona (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/nimona-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "About My Father",
+      "poster": "",
+      "link": "https://letterboxd.com/film/about-my-father/",
+      "year": "2023"
+    },
+    {
+      "title": "How to Blow Up a Pipeline (2022) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/how-to-blow-up-a-pipeline/",
+      "year": "2022"
+    },
+    {
+      "title": "Somewhere in Queens",
+      "poster": "",
+      "link": "https://letterboxd.com/film/somewhere-in-queens/",
+      "year": "2022"
+    },
+    {
+      "title": "BlackBerry",
+      "poster": "",
+      "link": "https://letterboxd.com/film/blackberry-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Fist of the Condor (2023) âÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fist-of-the-condor/",
+      "year": "2023"
+    },
+    {
+      "title": "Sisu (2022) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/sisu-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Guy Ritchie's The Covenant",
+      "poster": "",
+      "link": "https://letterboxd.com/film/guy-ritchies-the-covenant/",
+      "year": "2023"
+    },
+    {
+      "title": "Renfield (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/renfield/",
+      "year": "2023"
+    },
+    {
+      "title": "Dungeons & Dragons: Honor Among Thieves (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/dungeons-dragons-honor-among-thieves/",
+      "year": "2023"
+    },
+    {
+      "title": "The Super Mario Bros. Movie",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-super-mario-bros-movie/",
+      "year": "2023"
+    },
+    {
+      "title": "One Day as a Lion (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/one-day-as-a-lion/",
+      "year": "2023"
+    },
+    {
+      "title": "Operation Fortune: Ruse de Guerre",
+      "poster": "",
+      "link": "https://letterboxd.com/film/operation-fortune-ruse-de-guerre/",
+      "year": "2023"
+    },
+    {
+      "title": "Tetris",
+      "poster": "",
+      "link": "https://letterboxd.com/film/tetris/",
+      "year": "2023"
+    },
+    {
+      "title": "Sharper (2023) ââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/sharper/",
+      "year": "2023"
+    },
+    {
+      "title": "Missing (2023) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/missing-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Sick",
+      "poster": "",
+      "link": "https://letterboxd.com/film/sick-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Plane",
+      "poster": "",
+      "link": "https://letterboxd.com/film/plane-2023/",
+      "year": "2023"
+    },
+    {
+      "title": "Women Talking",
+      "poster": "",
+      "link": "https://letterboxd.com/film/women-talking/",
+      "year": "2022"
+    },
+    {
+      "title": "Babylon",
+      "poster": "",
+      "link": "https://letterboxd.com/film/babylon-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Guillermo del Toro's Pinocchio (2022) âââÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/guillermo-del-toros-pinocchio/",
+      "year": "2022"
+    },
+    {
+      "title": "Bones and All",
+      "poster": "",
+      "link": "https://letterboxd.com/film/bones-and-all/",
+      "year": "2022"
+    },
+    {
+      "title": "Resurrection",
+      "poster": "",
+      "link": "https://letterboxd.com/film/resurrection-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Triangle of Sadness",
+      "poster": "",
+      "link": "https://letterboxd.com/film/triangle-of-sadness/",
+      "year": "2022"
+    },
+    {
+      "title": "All Quiet on the Western Front",
+      "poster": "",
+      "link": "https://letterboxd.com/film/all-quiet-on-the-western-front-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "The Banshees of Inisherin (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-banshees-of-inisherin/",
+      "year": "2022"
+    },
+    {
+      "title": "Decision to Leave (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/decision-to-leave/",
+      "year": "2022"
+    },
+    {
+      "title": "The Fabelmans (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-fabelmans/",
+      "year": "2022"
+    },
+    {
+      "title": "Werewolf by Night",
+      "poster": "",
+      "link": "https://letterboxd.com/film/werewolf-by-night/",
+      "year": "2022"
+    },
+    {
+      "title": "Watcher (2022) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/watcher/",
+      "year": "2022"
+    },
+    {
+      "title": "Vengeance (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/vengeance-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Fire of Love (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fire-of-love-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Weird: The Al Yankovic Story (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/weird-the-al-yankovic-story-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Smile",
+      "poster": "",
+      "link": "https://letterboxd.com/film/smile-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Pearl (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/pearl-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Entergalactic",
+      "poster": "",
+      "link": "https://letterboxd.com/film/entergalactic/",
+      "year": "2022"
+    },
+    {
+      "title": "Fall (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fall-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "The Bob's Burgers Movie",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-bobs-burgers-movie/",
+      "year": "2022"
+    },
+    {
+      "title": "Bullet Train",
+      "poster": "",
+      "link": "https://letterboxd.com/film/bullet-train/",
+      "year": "2022"
+    },
+    {
+      "title": "Confess, Fletch",
+      "poster": "",
+      "link": "https://letterboxd.com/film/confess-fletch/",
+      "year": "2022"
+    },
+    {
+      "title": "Emily the Criminal (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/emily-the-criminal/",
+      "year": "2022"
+    },
+    {
+      "title": "Elvis",
+      "poster": "",
+      "link": "https://letterboxd.com/film/elvis-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Nope",
+      "poster": "",
+      "link": "https://letterboxd.com/film/nope/",
+      "year": "2022"
+    },
+    {
+      "title": "RRR",
+      "poster": "",
+      "link": "https://letterboxd.com/film/rrr/",
+      "year": "2022"
+    },
+    {
+      "title": "Prey",
+      "poster": "",
+      "link": "https://letterboxd.com/film/prey-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Fresh",
+      "poster": "",
+      "link": "https://letterboxd.com/film/fresh-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "The Black Phone (2021) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-black-phone/",
+      "year": "2021"
+    },
+    {
+      "title": "Lightyear (2022) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/lightyear-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Men",
+      "poster": "",
+      "link": "https://letterboxd.com/film/men-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Crimes of the Future (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/crimes-of-the-future-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Cha Cha Real Smooth",
+      "poster": "",
+      "link": "https://letterboxd.com/film/cha-cha-real-smooth/",
+      "year": "2022"
+    },
+    {
+      "title": "Good Luck to You, Leo Grande (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/good-luck-to-you-leo-grande/",
+      "year": "2022"
+    },
+    {
+      "title": "Hustle (2022) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/hustle-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "The Unbearable Weight of Massive Talent",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-unbearable-weight-of-massive-talent/",
+      "year": "2022"
+    },
+    {
+      "title": "Chip 'n Dale: Rescue Rangers",
+      "poster": "",
+      "link": "https://letterboxd.com/film/chip-n-dale-rescue-rangers/",
+      "year": "2022"
+    },
+    {
+      "title": "The Lost City (2022) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-lost-city-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Everything Everywhere All at Once (2022) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/everything-everywhere-all-at-once/",
+      "year": "2022"
+    },
+    {
+      "title": "Moonfall (2022) Ã¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/moonfall/",
+      "year": "2022"
+    },
+    {
+      "title": "Ambulance",
+      "poster": "",
+      "link": "https://letterboxd.com/film/ambulance-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "After Yang (2021) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/after-yang/",
+      "year": "2021"
+    },
+    {
+      "title": "X",
+      "poster": "",
+      "link": "https://letterboxd.com/film/x-2022/",
+      "year": "2022"
+    },
+    {
+      "title": "Kimi",
+      "poster": "",
+      "link": "https://letterboxd.com/film/kimi/",
+      "year": "2022"
+    },
+    {
+      "title": "Windfall",
+      "poster": "",
+      "link": "https://letterboxd.com/film/windfall/",
+      "year": "2022"
+    },
+    {
+      "title": "C'mon C'mon",
+      "poster": "",
+      "link": "https://letterboxd.com/film/cmon-cmon/",
+      "year": "2021"
+    },
+    {
+      "title": "CODA (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/coda-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "King Richard (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/king-richard/",
+      "year": "2021"
+    },
+    {
+      "title": "West Side Story (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/west-side-story-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "The Eyes of Tammy Faye",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-eyes-of-tammy-faye-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Flee",
+      "poster": "",
+      "link": "https://letterboxd.com/film/flee-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Nightmare Alley",
+      "poster": "",
+      "link": "https://letterboxd.com/film/nightmare-alley-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Encanto",
+      "poster": "",
+      "link": "https://letterboxd.com/film/encanto/",
+      "year": "2021"
+    },
+    {
+      "title": "The Worst Person in the World",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-worst-person-in-the-world/",
+      "year": "2021"
+    },
+    {
+      "title": "The Tragedy of Macbeth",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-tragedy-of-macbeth/",
+      "year": "2021"
+    },
+    {
+      "title": "Belfast",
+      "poster": "",
+      "link": "https://letterboxd.com/film/belfast/",
+      "year": "2021"
+    },
+    {
+      "title": "Old Henry (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/old-henry/",
+      "year": "2021"
+    },
+    {
+      "title": "Don't Look Up",
+      "poster": "",
+      "link": "https://letterboxd.com/film/dont-look-up-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "The French Dispatch of the Liberty, Kansas Evening Sun",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-french-dispatch-of-the-liberty-kansas/",
+      "year": "2021"
+    },
+    {
+      "title": "The Harder They Fall",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-harder-they-fall-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Last Night in Soho",
+      "poster": "",
+      "link": "https://letterboxd.com/film/last-night-in-soho/",
+      "year": "2021"
+    },
+    {
+      "title": "In the Earth",
+      "poster": "",
+      "link": "https://letterboxd.com/film/in-the-earth/",
+      "year": "2021"
+    },
+    {
+      "title": "Saint Maud (2019) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/saint-maud/",
+      "year": "2019"
+    },
+    {
+      "title": "America: The Motion Picture (2021) Ã¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/america-the-motion-picture/",
+      "year": "2021"
+    },
+    {
+      "title": "Dune (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/dune-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "The Power of the Dog",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-power-of-the-dog/",
+      "year": "2021"
+    },
+    {
+      "title": "Annette (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/annette/",
+      "year": "2021"
+    },
+    {
+      "title": "Candyman",
+      "poster": "",
+      "link": "https://letterboxd.com/film/candyman-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Freaky",
+      "poster": "",
+      "link": "https://letterboxd.com/film/freaky/",
+      "year": "2020"
+    },
+    {
+      "title": "The Card Counter",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-card-counter/",
+      "year": "2021"
+    },
+    {
+      "title": "Zola (2020) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/zola/",
+      "year": "2020"
+    },
+    {
+      "title": "Raya and the Last Dragon",
+      "poster": "",
+      "link": "https://letterboxd.com/film/raya-and-the-last-dragon/",
+      "year": "2021"
+    },
+    {
+      "title": "Reminiscence (2021) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/reminiscence-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "A Quiet Place Part II (2020) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/a-quiet-place-part-ii/",
+      "year": "2020"
+    },
+    {
+      "title": "Bad Trip (2021) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/bad-trip-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "Pig",
+      "poster": "",
+      "link": "https://letterboxd.com/film/pig-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "No Sudden Move (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/no-sudden-move/",
+      "year": "2021"
+    },
+    {
+      "title": "Barb & Star Go to Vista Del Mar (2021) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/barb-star-go-to-vista-del-mar/",
+      "year": "2021"
+    },
+    {
+      "title": "The Mitchells vs. the Machines",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-mitchells-vs-the-machines/",
+      "year": "2021"
+    },
+    {
+      "title": "Nobody (2021) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/nobody-2021/",
+      "year": "2021"
+    },
+    {
+      "title": "First Cow (2019) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/first-cow/",
+      "year": "2019"
+    },
+    {
+      "title": "News of the World",
+      "poster": "",
+      "link": "https://letterboxd.com/film/news-of-the-world/",
+      "year": "2020"
+    },
+    {
+      "title": "The Wild Bunch (1969) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-wild-bunch/",
+      "year": "1969"
+    },
+    {
+      "title": "Oldboy",
+      "poster": "",
+      "link": "https://letterboxd.com/film/oldboy/",
+      "year": "2003"
+    },
+    {
+      "title": "Life Is Beautiful",
+      "poster": "",
+      "link": "https://letterboxd.com/film/life-is-beautiful/",
+      "year": "1997"
+    },
+    {
+      "title": "I Care a Lot (2020) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/i-care-a-lot/",
+      "year": "2020"
+    },
+    {
+      "title": "Synchronic",
+      "poster": "",
+      "link": "https://letterboxd.com/film/synchronic/",
+      "year": "2019"
+    },
+    {
+      "title": "The Vast of Night",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-vast-of-night/",
+      "year": "2019"
+    },
+    {
+      "title": "The Father",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-father-2020/",
+      "year": "2020"
+    },
+    {
+      "title": "Promising Young Woman",
+      "poster": "",
+      "link": "https://letterboxd.com/film/promising-young-woman/",
+      "year": "2020"
+    },
+    {
+      "title": "The Invisible Man",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-invisible-man-2020/",
+      "year": "2020"
+    },
+    {
+      "title": "Borat Subsequent Moviefilm: Delivery of Prodigious Bribe to American Regime for Make Benefit Once Glorious Nation of Kazakhstan (2020) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/borat-subsequent-moviefilm-delivery-of-prodigious/",
+      "year": "2020"
+    },
+    {
+      "title": "Ma Rainey's Black Bottom (2020) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/ma-raineys-black-bottom/",
+      "year": "2020"
+    },
+    {
+      "title": "Time",
+      "poster": "",
+      "link": "https://letterboxd.com/film/time-2020/",
+      "year": "2020"
+    },
+    {
+      "title": "Nomadland (2020) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/nomadland/",
+      "year": "2020"
+    },
+    {
+      "title": "Minari",
+      "poster": "",
+      "link": "https://letterboxd.com/film/minari/",
+      "year": "2020"
+    },
+    {
+      "title": "Judas and the Black Messiah",
+      "poster": "",
+      "link": "https://letterboxd.com/film/judas-and-the-black-messiah/",
+      "year": "2021"
+    },
+    {
+      "title": "Sound of Metal (2019) Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/sound-of-metal/",
+      "year": "2019"
+    },
+    {
+      "title": "The Trial of the Chicago 7",
+      "poster": "",
+      "link": "https://letterboxd.com/film/the-trial-of-the-chicago-7/",
+      "year": "2020"
+    },
+    {
+      "title": "One Night in Miami...",
+      "poster": "",
+      "link": "https://letterboxd.com/film/one-night-in-miami/",
+      "year": "2020"
+    },
+    {
+      "title": "I'm Thinking of Ending Things (2020) Ã¢ÂÂÃ¢ÂÂÃÂ½",
+      "poster": "",
+      "link": "https://letterboxd.com/film/im-thinking-of-ending-things/",
+      "year": "2020"
+    },
+    {
+      "title": "Da 5 Bloods",
+      "poster": "",
+      "link": "https://letterboxd.com/film/da-5-bloods/",
+      "year": "2020"
+    },
+    {
+      "title": "Mank",
+      "poster": "",
+      "link": "https://letterboxd.com/film/mank/",
+      "year": "2020"
     }
   ]
 }
