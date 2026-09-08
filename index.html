@@ -67,14 +67,14 @@ button.active,button:hover{background:var(--red);color:white}
 .lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line)}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
 .motw-badge{position:absolute;top:7px;left:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 6px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4;text-align:center}
-.motw-tile{grid-column:span 4;grid-row:span 2;display:grid;grid-template-columns:140px 1fr;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:unset}
-.motw-tile-poster{background:#17171d center/cover no-repeat;min-height:100%}
-.motw-tile-body{padding:20px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden}
-.motw-tile-body h3{font:700 clamp(16px,2vw,26px)/1.1 Georgia;margin:0}
-.motw-tile-body .meta{color:var(--muted);font-size:12px}
-.motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.55;margin:0;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:1000px){.motw-tile{grid-column:span 2;grid-row:span 2}}
-@media(max-width:600px){.motw-tile{grid-column:span 3;grid-row:span 1;grid-template-columns:100px 1fr;min-height:180px}}
+.motw-tile{grid-column:span 4;grid-row:span 1;display:grid;grid-template-columns:100px 1fr;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.motw-tile-poster{background:#17171d center/cover no-repeat}
+.motw-tile-body{padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;overflow:hidden}
+.motw-tile-body h3{font:700 clamp(14px,1.6vw,22px)/1.1 Georgia;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.motw-tile-body .meta{color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.motw-tile-body .overview{color:var(--ink);font-size:12px;line-height:1.5;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:1000px){.motw-tile{grid-column:span 3}}
+@media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr}}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
 .lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
@@ -406,16 +406,14 @@ function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
       if(node){
         const isSel=selTitles.has(m.title.toLowerCase());
         const star=isSel?`<div class="star-badge"></div>`:'';
-        const motw=showMotw&&i===0?`<div class="motw-badge">Movie<br>of the<br>Week</div>`:'';
         if(dt?.poster){
-          node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${motw}${star}`;
+          node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${star}`;
         } else {
-          node.innerHTML=`<div class="lbxd-fallback titled">${m.title}</div>${motw}${star}`;
+          node.innerHTML=`<div class="lbxd-fallback titled">${m.title}</div>${star}`;
         }
       }
     },0);
-    const motwBadge=showMotw&&i===0?`<div class="motw-badge">Movie<br>of the<br>Week</div>`:'';
-    return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${m.title}</div>${motwBadge}</div>`;
+    return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${m.title}</div></div>`;
   }).join('');
 }
 
