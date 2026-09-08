@@ -67,6 +67,7 @@ button.active,button:hover{background:var(--red);color:white}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
 .motw-badge{position:absolute;top:7px;left:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 6px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4;text-align:center}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
+.lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
 .modal{display:none;position:fixed;inset:0;z-index:20;background:#000b;padding:22px;place-items:center}
 .modal.open{display:grid}
@@ -340,7 +341,7 @@ async function loadJson(file){
   return resp.json();
 }
 
-function renderGrid(gridEl,metaEl,movies,updated,showMotw){
+function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
   if(updated){const d=new Date(updated);metaEl.textContent='Last synced '+d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
   gridEl.innerHTML=movies.map((m,i)=>{
     const pid='lb'+Math.random().toString(36).slice(2);
@@ -348,7 +349,16 @@ function renderGrid(gridEl,metaEl,movies,updated,showMotw){
     setTimeout(async()=>{
       const dt=await tmdbPoster(m.title,m.year);
       const node=document.getElementById(pid);
-      if(node&&dt?.poster)node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${motw}`;
+      if(node){
+        const isSel=selTitles.has(m.title.toLowerCase());
+        const star=isSel?`<span class="star-badge">★</span>`:'';
+        if(dt?.poster){
+          node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${motw}${star}`;
+        } else {
+          // No poster found — show titled blank card
+          node.innerHTML=`<div class="lbxd-fallback titled">${m.title}</div>${motw}${star}`;
+        }
+      }
     },0);
     return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${m.title}</div>${motw}</div>`;
   }).join('');
@@ -362,7 +372,10 @@ async function buildLbxd(){
     const p=await loadJson('movies.json');
     const movies=p.movies||[];
     if(!movies.length)throw new Error('List is empty — run the bookmarklet first.');
-    renderGrid(grid,meta,movies,p.updated,true);
+    // Load selections for star badges
+    let selTitles=new Set();
+    try{const sp=await loadJson('selections.json');(sp.movies||[]).forEach(m=>selTitles.add(m.title.toLowerCase()));}catch(e){}
+    renderGrid(grid,meta,movies,p.updated,true,selTitles);
   }catch(e){
     grid.innerHTML=`<div class="lbxd-error">${e.message}</div>`;
   }
