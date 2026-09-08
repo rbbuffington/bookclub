@@ -150,7 +150,7 @@ const KEY="b8b947142d3f178fc8d701e6ef3c0d3b";
 const BP={"2025": "center 20%", "2024": "center 28%", "2023": "center 28%", "2022": "center 28%", "2021": "70% 28%", "2020": "center 15%"};
 const P=['Casey','Caleb','Will','Blake'];
 let year='2025',factsDone=false,activeTab='rankings';
-let selections=new Set();
+
 const cache=JSON.parse(localStorage.getItem('bc_v9')||'{}');
 function saveCache(){try{localStorage.setItem('bc_v9',JSON.stringify(cache));}catch(e){}}
 const clean=s=>s.replace(/\s*\/\s*.*/,'').replace(/\s*\(.*?\)\s*$/,'').trim();
@@ -225,9 +225,7 @@ function makePosterSection(label,items,isCons){
       const dt=await tmdb(item.title,year);
       const node=document.getElementById(pid);
       if(node&&dt?.poster){
-        const isSel=selections.has(item.title.toLowerCase());
-        const star=isSel?`<span class="star-badge">★</span>`:'';
-        node.innerHTML=`<img src="https://image.tmdb.org/t/p/w342${dt.poster}" alt="${item.title}"><span class="badge">${num}</span>${pb}${star}`;
+        node.innerHTML=`<img src="https://image.tmdb.org/t/p/w342${dt.poster}" alt="${item.title}"><span class="badge">${num}</span>${pb}`;
       }
     },0);
     return `<div class="poster${isO?' overflow':''}" id="${pid}" onclick='openMovie(${JSON.stringify(item.title)},${JSON.stringify(year)})'><div class="fallback">${item.title}</div><span class="badge">${num}</span>${pb}</div>`;
@@ -384,17 +382,10 @@ async function buildSel(){
   }
 }
 
-async function loadSelections(){
-  try{
-    const p=await loadJson('selections.json');
-    (p.movies||[]).forEach(m=>selections.add(m.title.toLowerCase()));
-  }catch(e){}
-}
-
 modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open');};
 buildNav();
 setActiveTab('rankings');
-loadSelections().then(()=>render());
+render();
 
 </script>
 </body>
