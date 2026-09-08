@@ -31,7 +31,8 @@ button.active,button:hover{background:var(--red);color:white}
 .poster .fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 13px Georgia;color:var(--muted)}
 .badge{position:absolute;top:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:99px;width:29px;height:29px;display:grid;place-items:center;font-weight:900;font-size:13px;z-index:1}
 .pts-badge{position:absolute;bottom:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:6px;padding:2px 6px;font:700 11px Inter;color:var(--gold);z-index:1}
-.star-badge{position:absolute;bottom:7px;right:7px;z-index:2;background:var(--red);color:white;font-size:14px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px #0008}
+.star-badge{position:absolute;top:0;right:0;z-index:2;width:0;height:0;border-style:solid;border-width:0 48px 48px 0;border-color:transparent var(--red) transparent transparent}
+.star-badge:after{content:"\2605";position:absolute;top:5px;right:-42px;font-size:17px;color:white;line-height:1}
 .arrow{display:none;position:absolute;top:0;right:-18px;bottom:0;width:40px;align-items:center;justify-content:center;cursor:pointer;z-index:3}
 .arrow svg{opacity:.45;transition:opacity .15s}
 .arrow:hover svg{opacity:.95}
@@ -74,6 +75,17 @@ button.active,button:hover{background:var(--red);color:white}
 .motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:1000px){.motw-tile{grid-column:span 3;aspect-ratio:unset;min-height:180px}}
 @media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr;aspect-ratio:unset;min-height:160px}}
+.lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
+.lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
+.lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
+.motw-tile{grid-column:span 4;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,5fr);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:calc(8/3)}
+.motw-tile-poster{background:#111 center/cover no-repeat}
+.motw-tile-body{padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;overflow:hidden}
+.motw-tile-body h3{font:700 clamp(16px,1.6vw,26px)/1.15 Georgia;margin:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.motw-tile-body .meta{color:var(--muted);font-size:13px;line-height:1.4}
+.motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:1000px){.motw-tile{grid-column:span 3;aspect-ratio:calc(2)}}
+@media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr;aspect-ratio:unset;min-height:140px}}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
 .lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
@@ -131,7 +143,6 @@ button.active,button:hover{background:var(--red);color:white}
       <button class="sel-link" onclick="setActiveTab('sel');buildSel()">View Selections &rarr;</button>
     </div>
     <div class="lbxd-meta" id="lbxdMeta"></div>
-    <div class="motw-wrap" id="motwWrap" style="display:none"></div>
     <div class="lbxd-grid" id="lbxdGrid"><div class="lbxd-error">Loading&hellip;</div></div>
   </section>
   <section class="sel-section" id="selSection">
@@ -355,42 +366,51 @@ async function loadJson(file){
 
 function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
   if(updated){const d=new Date(updated);metaEl.textContent='Last synced '+d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
-  const motwWrap=document.getElementById('motwWrap');
-  if(motwWrap){
-    if(showMotw&&movies.length){
-      const mid='mt'+Math.random().toString(36).slice(2);
-      motwWrap.style.display='grid';
-      motwWrap.innerHTML=`<div class="motw-tile" id="${mid}"><div class="motw-tile-poster" id="${mid}_p"></div><div class="motw-tile-body" id="${mid}_b"><div class="kicker">Movie of the Week</div><h3>${movies[0].title}</h3><div class="meta">Loading…</div></div></div>`;
-      setTimeout(async()=>{
-        const m=movies[0];let info=null;
-        try{
-          const q=clean(m.title);
-          let u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}${m.year?'&year='+m.year:''}`;
-          let j=await(await fetch(u)).json();let res=j.results?.[0];
-          if(!res){u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}`;j=await(await fetch(u)).json();res=j.results?.[0];}
-          if(res)info=await(await fetch(`https://api.themoviedb.org/3/movie/${res.id}?api_key=${KEY}&append_to_response=credits`)).json();
-        }catch(e){}
-        const p=document.getElementById(mid+'_p'),b=document.getElementById(mid+'_b');
-        if(!p||!b)return;
-        if(info?.poster_path)p.style.backgroundImage=`url(https://image.tmdb.org/t/p/w342${info.poster_path})`;
-        if(info){
-          const dirs=(info.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name).join(', ')||'';
-          const runtime=info.runtime?`${info.runtime} min`:'';
-          const yr=info.release_date?info.release_date.slice(0,4):'';
-          b.innerHTML=`<div class="kicker">Movie of the Week</div><h3>${info.title||m.title}</h3><div class="meta">${[yr,dirs,runtime].filter(Boolean).join(' · ')}</div>${info.overview?`<p class="overview">${info.overview}</p>`:''}`;
-        }
-      },0);
-    } else {motwWrap.style.display='none';motwWrap.innerHTML='';}
-  }
+
+  // MoTW tile is first item in the grid (spans 4 cols); remaining movies fill the rest
   const gridMovies=showMotw&&movies.length?movies.slice(1):movies;
-  gridEl.innerHTML=gridMovies.map(m=>{
+  const mid='mt'+Math.random().toString(36).slice(2);
+  const motwHTML=showMotw&&movies.length?`<div class="motw-tile" id="${mid}">
+    <div class="motw-tile-poster" id="${mid}_p"></div>
+    <div class="motw-tile-body" id="${mid}_b">
+      <div class="kicker">Movie of the Week</div>
+      <h3>${movies[0].title}</h3>
+      <div class="meta">Loading…</div>
+    </div></div>`:'';
+
+  if(showMotw&&movies.length){
+    setTimeout(async()=>{
+      const m=movies[0];let info=null;
+      try{
+        const q=clean(m.title);
+        let u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}${m.year?'&year='+m.year:''}`;
+        let j=await(await fetch(u)).json();let res=j.results?.[0];
+        if(!res){u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}`;j=await(await fetch(u)).json();res=j.results?.[0];}
+        if(res)info=await(await fetch(`https://api.themoviedb.org/3/movie/${res.id}?api_key=${KEY}&append_to_response=credits`)).json();
+      }catch(e){}
+      const p=document.getElementById(mid+'_p'),b=document.getElementById(mid+'_b');
+      if(!p||!b)return;
+      if(info?.poster_path)p.style.backgroundImage=`url(https://image.tmdb.org/t/p/w342${info.poster_path})`;
+      if(info){
+        const dirs=(info.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name).join(', ')||'';
+        const runtime=info.runtime?`${info.runtime} min`:'';
+        const yr=info.release_date?info.release_date.slice(0,4):'';
+        b.innerHTML=`<div class="kicker">Movie of the Week</div>
+          <h3>${info.title||m.title}</h3>
+          <div class="meta">${[yr,dirs,runtime].filter(Boolean).join(' · ')}</div>
+          ${info.overview?`<p class="overview">${info.overview}</p>`:''}`;
+      }
+    },0);
+  }
+
+  gridEl.innerHTML=motwHTML+gridMovies.map(m=>{
     const pid='lb'+Math.random().toString(36).slice(2);
     setTimeout(async()=>{
       const dt=await tmdbPoster(m.title,m.year);
       const node=document.getElementById(pid);
       if(node){
         const isSel=selTitles.has(m.title.toLowerCase());
-        const star=isSel?`<span class="star-badge">★</span>`:'';
+        const star=isSel?`<div class="star-badge"></div>`:'';
         if(dt?.poster){node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${star}`;}
         else{node.innerHTML=`<div class="lbxd-fallback titled">${m.title}</div>${star}`;}
       }
