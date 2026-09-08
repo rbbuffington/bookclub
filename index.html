@@ -66,15 +66,14 @@ button.active,button:hover{background:var(--red);color:white}
 .lbxd-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
 .lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line)}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
-/* MoTW tile: spans 4 cols, same row height as one poster card (aspect-ratio 2/3) */
-.motw-tile{grid-column:span 4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:2/3}
-.motw-tile-poster{background:#111 center/contain no-repeat;min-height:100%}
-.motw-tile-body{padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden}
-.motw-tile-body h3{font:700 clamp(15px,1.8vw,24px)/1.15 Georgia;margin:0}
+/* MoTW tile: sits ABOVE the grid, fixed height */
+.motw-tile{display:grid;grid-template-columns:120px 1fr;height:180px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:12px}
+.motw-tile-poster{background:#111 center/cover no-repeat}
+.motw-tile-body{padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;overflow:hidden}
+.motw-tile-body h3{font:700 clamp(16px,2vw,26px)/1.15 Georgia;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .motw-tile-body .meta{color:var(--muted);font-size:12px;line-height:1.4}
-.motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:1000px){.motw-tile{grid-column:span 3;aspect-ratio:unset;min-height:180px}}
-@media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr;aspect-ratio:unset;min-height:160px}}
+.motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:600px){.motw-tile{height:140px;grid-template-columns:90px 1fr}}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
 .lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
@@ -390,7 +389,11 @@ function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
   // Grid: skip movies[0] when showing motw tile (it's already shown in the tile)
   const gridMovies=showMotw&&movies.length?movies.slice(1):movies;
 
-  gridEl.innerHTML=motwTile+gridMovies.map(m=>{
+  // Insert motw tile as sibling before the grid, not inside it
+  const existingTile=gridEl.previousElementSibling;
+  if(existingTile&&existingTile.classList.contains('motw-tile'))existingTile.remove();
+  if(motwTile){gridEl.insertAdjacentHTML('beforebegin',motwTile);}
+  gridEl.innerHTML=gridMovies.map(m=>{
     const pid='lb'+Math.random().toString(36).slice(2);
     setTimeout(async()=>{
       const dt=await tmdbPoster(m.title,m.year);
