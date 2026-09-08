@@ -32,7 +32,7 @@ button.active,button:hover{background:var(--red);color:white}
 .badge{position:absolute;top:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:99px;width:29px;height:29px;display:grid;place-items:center;font-weight:900;font-size:13px;z-index:1}
 .pts-badge{position:absolute;bottom:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:6px;padding:2px 6px;font:700 11px Inter;color:var(--gold);z-index:1}
 .star-badge{position:absolute;top:0;right:0;z-index:2;width:0;height:0;border-style:solid;border-width:0 46px 46px 0;border-color:transparent var(--red) transparent transparent}
-.star-badge:after{content:"★";position:absolute;top:4px;right:-40px;font-size:16px;color:white;line-height:1}
+.star-badge:after{content:"°5";position:absolute;top:4px;right:-40px;font-size:16px;color:white;line-height:1}
 .arrow{display:none;position:absolute;top:0;right:-18px;bottom:0;width:40px;align-items:center;justify-content:center;cursor:pointer;z-index:3}
 .arrow svg{opacity:.45;transition:opacity .15s}
 .arrow:hover svg{opacity:.95}
@@ -66,15 +66,15 @@ button.active,button:hover{background:var(--red);color:white}
 .lbxd-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
 .lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line)}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
-.motw-badge{position:absolute;top:7px;left:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 6px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4;text-align:center}
-.motw-tile{grid-column:span 4;grid-row:span 1;display:grid;grid-template-columns:100px 1fr;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.motw-tile-poster{background:#17171d center/cover no-repeat}
-.motw-tile-body{padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;overflow:hidden}
-.motw-tile-body h3{font:700 clamp(14px,1.6vw,22px)/1.1 Georgia;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.motw-tile-body .meta{color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.motw-tile-body .overview{color:var(--ink);font-size:12px;line-height:1.5;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:1000px){.motw-tile{grid-column:span 3}}
-@media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr}}
+/* MoTW tile: spans 4 cols, same row height as one poster card (aspect-ratio 2/3) */
+.motw-tile{grid-column:span 4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:2/3}
+.motw-tile-poster{background:#111 center/contain no-repeat;min-height:100%}
+.motw-tile-body{padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden}
+.motw-tile-body h3{font:700 clamp(15px,1.8vw,24px)/1.15 Georgia;margin:0}
+.motw-tile-body .meta{color:var(--muted);font-size:12px;line-height:1.4}
+.motw-tile-body .overview{color:var(--ink);font-size:13px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:1000px){.motw-tile{grid-column:span 3;aspect-ratio:unset;min-height:180px}}
+@media(max-width:600px){.motw-tile{grid-column:span 3;grid-template-columns:80px 1fr;aspect-ratio:unset;min-height:160px}}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
 .lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
@@ -88,8 +88,7 @@ button.active,button:hover{background:var(--red);color:white}
 .rows{margin-top:20px}
 .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0}
 .attribution{text-align:center;color:var(--muted);margin-top:38px;font-size:12px}
-@media(max-width:1000px){.posterGrid{grid-template-columns:repeat(5,1fr)}.factGrid{grid-template-columns:1fr 1fr}}
-@media(max-width:1000px){.lbxd-grid{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:1000px){.posterGrid{grid-template-columns:repeat(5,1fr)}.factGrid{grid-template-columns:1fr 1fr}.lbxd-grid{grid-template-columns:repeat(6,1fr)}}
 @media(max-width:600px){.posterGrid{grid-template-columns:repeat(3,1fr)}.factGrid{grid-template-columns:1fr}.lbxd-grid{grid-template-columns:repeat(3,1fr)}.modalCard{grid-template-columns:1fr}.modalPoster{display:none}nav{position:static}.wrap{padding-top:22px}}
 </style>
 </head>
@@ -120,10 +119,7 @@ button.active,button:hover{background:var(--red);color:white}
   </section>
   <section class="lbxd-section" id="lbxdSection">
     <div class="list-header">
-      <div>
-        <div class="kicker">Every movie</div>
-        <h2>The List</h2>
-      </div>
+      <div><div class="kicker">Every movie</div><h2>The List</h2></div>
       <button class="sel-link" onclick="setActiveTab('sel');buildSel()">View Selections &rarr;</button>
     </div>
     <div class="lbxd-meta" id="lbxdMeta"></div>
@@ -131,10 +127,7 @@ button.active,button:hover{background:var(--red);color:white}
   </section>
   <section class="sel-section" id="selSection">
     <div class="list-header">
-      <div>
-        <div class="kicker">Unanimous picks</div>
-        <h2>Selections</h2>
-      </div>
+      <div><div class="kicker">Unanimous picks</div><h2>Selections</h2></div>
       <button class="sel-link" onclick="setActiveTab('lbxd');buildLbxd()">Back to The List &rarr;</button>
     </div>
     <div class="lbxd-meta" id="selMeta"></div>
@@ -158,21 +151,13 @@ button.active,button:hover{background:var(--red);color:white}
 const DATA={"2020": {"consensus": [{"rank": 1, "title": "Soul", "score": 40}, {"rank": 2, "title": "Promising Young Woman", "score": 32}, {"rank": 3, "title": "Judas and the Black Messiah", "score": 31}, {"rank": 4, "title": "Mank", "score": 26}, {"rank": 5, "title": "The Invisible Man", "score": 24}, {"rank": 6, "title": "Bad Education", "score": 18}, {"rank": 7, "title": "World of Tomorrow 3", "score": 11}, {"rank": 8, "title": "Palm Springs", "score": 8}, {"rank": 9, "title": "Da 5 Bloods", "score": 7}, {"rank": 9, "title": "Ma Rainey's Black Bottom", "score": 7}, {"rank": 9, "title": "The Vast of Night", "score": 7}, {"rank": 12, "title": "Boys State", "score": 6}], "rankings": {"Casey": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Judas and the Black Messiah"}, {"rank": 3, "title": "Promising Young Woman"}, {"rank": 4, "title": "Mank"}, {"rank": 5, "title": "The Vast of Night"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Da 5 Bloods"}, {"rank": 8, "title": "Ma Rainey's Black Bottom"}, {"rank": 9, "title": "Sound of Metal"}, {"rank": 10, "title": "Palm Springs"}], "Caleb": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "The Invisible Man"}, {"rank": 3, "title": "Bad Education"}, {"rank": 4, "title": "Promising Young Woman"}, {"rank": 5, "title": "Mank"}, {"rank": 6, "title": "Judas and the Black Messiah"}, {"rank": 7, "title": "Palm Springs"}, {"rank": 8, "title": "World of Tomorrow 3"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "Fatman"}], "Will": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Judas and the Black Messiah"}, {"rank": 3, "title": "Promising Young Woman"}, {"rank": 4, "title": "Mank"}, {"rank": 5, "title": "Bad Education"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Ma Rainey's Black Bottom"}, {"rank": 8, "title": "Palm Springs"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "World of Tomorrow 3"}], "Blake": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Promising Young Woman"}, {"rank": 3, "title": "Judas and the Black Messiah"}, {"rank": 4, "title": "World of Tomorrow 3"}, {"rank": 5, "title": "Mank"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Bad Education"}, {"rank": 8, "title": "Da 5 Bloods"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "The Vast of Night"}]}}, "2021": {"consensus": [{"rank": 1, "title": "Licorice Pizza", "score": 35}, {"rank": 2, "title": "C'mon C'mon", "score": 27}, {"rank": 3, "title": "Saint Maud", "score": 22}, {"rank": 4, "title": "The Worst Person in the World", "score": 19}, {"rank": 5, "title": "The Green Knight", "score": 13}, {"rank": 5, "title": "Last Night in Soho", "score": 13}, {"rank": 7, "title": "The Last Duel", "score": 10}, {"rank": 7, "title": "West Side Story", "score": 10}, {"rank": 9, "title": "The Power of the Dog", "score": 9}, {"rank": 10, "title": "Old Henry", "score": 4}], "rankings": {"Casey": [{"rank": 1, "title": "The Green Knight"}, {"rank": 2, "title": "Licorice Pizza"}, {"rank": 3, "title": "Saint Maud"}, {"rank": 4, "title": "Drive My Car"}, {"rank": 5, "title": "The Tragedy of Macbeth"}, {"rank": 6, "title": "West Side Story"}, {"rank": 7, "title": "Summer of Soul"}, {"rank": 8, "title": "Old Henry"}, {"rank": 9, "title": "Last Night in Soho"}, {"rank": 10, "title": "C'mon C'mon"}], "Caleb": [{"rank": 1, "title": "Licorice Pizza"}, {"rank": 2, "title": "The Worst Person in the World"}, {"rank": 3, "title": "C'mon C'mon"}, {"rank": 4, "title": "Saint Maud"}, {"rank": 5, "title": "Last Night in Soho"}, {"rank": 6, "title": "The Last Duel"}, {"rank": 7, "title": "No Sudden Move"}, {"rank": 8, "title": "Freaky"}, {"rank": 9, "title": "Nobody"}, {"rank": 10, "title": "Old Henry"}], "Will": [{"rank": 1, "title": "The Worst Person in the World"}, {"rank": 2, "title": "C'mon C'mon"}, {"rank": 3, "title": "Licorice Pizza"}, {"rank": 4, "title": "Don't Look Up"}, {"rank": 5, "title": "Dune"}, {"rank": 6, "title": "West Side Story"}, {"rank": 7, "title": "The Power of the Dog"}, {"rank": 8, "title": "The Green Knight"}, {"rank": 9, "title": "The Last Duel"}, {"rank": 10, "title": "Last Night in Soho"}], "Blake": [{"rank": 1, "title": "Bo Burnham: Inside"}, {"rank": 2, "title": "C'mon C'mon"}, {"rank": 3, "title": "Licorice Pizza"}, {"rank": 4, "title": "Saint Maud"}, {"rank": 5, "title": "Annette"}, {"rank": 6, "title": "The Power of the Dog"}, {"rank": 7, "title": "Last Night in Soho"}, {"rank": 8, "title": "The Last Duel"}, {"rank": 9, "title": "Titane"}, {"rank": 10, "title": "Fear Street Part One: 1994"}]}}, "2022": {"consensus": [{"rank": 1, "title": "Everything Everywhere All At Once", "score": 35}, {"rank": 2, "title": "RRR", "score": 34}, {"rank": 3, "title": "The Banshees of Inisherin", "score": 32}, {"rank": 4, "title": "Decision To Leave", "score": 30}, {"rank": 5, "title": "Nope", "score": 24}, {"rank": 6, "title": "Top Gun: Maverick", "score": 23}, {"rank": 7, "title": "Bones and All", "score": 8}, {"rank": 8, "title": "The Unbearable Weight of Massive Talent", "score": 7}, {"rank": 9, "title": "Babylon", "score": 6}, {"rank": 9, "title": "The Batman", "score": 6}, {"rank": 11, "title": "Apollo 10 1/2", "score": 3}], "rankings": {"Casey": [{"rank": 1, "title": "RRR"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "Decision To Leave"}, {"rank": 4, "title": "The Banshees of Inisherin"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "The Batman"}, {"rank": 7, "title": "Top Gun: Maverick"}, {"rank": 8, "title": "Bones and All"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "Apollo 10 1/2"}], "Caleb": [{"rank": 1, "title": "Top Gun: Maverick"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "The Banshees of Inisherin"}, {"rank": 4, "title": "RRR"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Decision To Leave"}, {"rank": 7, "title": "The Unbearable Weight of Massive Talent"}, {"rank": 8, "title": "Elvis"}, {"rank": 9, "title": "Puss in Boots: The Last Wish"}, {"rank": 10, "title": "Apollo 10 1/2"}], "Will": [{"rank": 1, "title": "RRR"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "Decision To Leave"}, {"rank": 4, "title": "The Banshees of Inisherin"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Top Gun: Maverick"}, {"rank": 7, "title": "All Quiet on the Western Front"}, {"rank": 8, "title": "Aftersun"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "The Batman"}], "Blake": [{"rank": 1, "title": "The Banshees of Inisherin"}, {"rank": 2, "title": "Decision To Leave"}, {"rank": 3, "title": "Everything Everywhere All At Once"}, {"rank": 4, "title": "RRR"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Bones and All"}, {"rank": 7, "title": "Top Gun: Maverick"}, {"rank": 8, "title": "The Unbearable Weight of Massive Talent"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "Apollo 10 1/2"}]}}, "2023": {"consensus": [{"rank": 1, "title": "Beau is Afraid", "score": 32}, {"rank": 2, "title": "Poor Things", "score": 31}, {"rank": 3, "title": "Oppenheimer", "score": 27}, {"rank": 4, "title": "Killers of the Flower Moon", "score": 21}, {"rank": 5, "title": "The Covenant", "score": 16}, {"rank": 6, "title": "Air", "score": 14}, {"rank": 6, "title": "Saltburn", "score": 14}, {"rank": 8, "title": "Talk to Me", "score": 12}, {"rank": 9, "title": "Barbie", "score": 9}, {"rank": 10, "title": "The Holdovers", "score": 7}], "rankings": {"Casey": [{"rank": 1, "title": "Beau is Afraid"}, {"rank": 2, "title": "Oppenheimer"}, {"rank": 3, "title": "Poor Things"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Saltburn"}, {"rank": 6, "title": "Talk to Me"}, {"rank": 7, "title": "Asteroid City"}, {"rank": 8, "title": "Barbie"}, {"rank": 9, "title": "The Holdovers"}, {"rank": 10, "title": "Dicks: The Musical"}], "Caleb": [{"rank": 1, "title": "The Covenant"}, {"rank": 2, "title": "Air"}, {"rank": 3, "title": "Sisu"}, {"rank": 4, "title": "Talk to Me"}, {"rank": 5, "title": "John Wick 4"}, {"rank": 6, "title": "Poor Things"}, {"rank": 7, "title": "Beau is Afraid"}, {"rank": 8, "title": "Saltburn"}, {"rank": 9, "title": "D&D: Honor Among Thieves"}, {"rank": 10, "title": "No Hard Feelings"}], "Will": [{"rank": 1, "title": "Oppenheimer"}, {"rank": 2, "title": "Poor Things"}, {"rank": 3, "title": "Beau is Afraid"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Barbie"}, {"rank": 6, "title": "Saltburn"}, {"rank": 7, "title": "American Fiction"}, {"rank": 8, "title": "The Holdovers"}, {"rank": 9, "title": "The Covenant"}, {"rank": 10, "title": "Maestro"}], "Blake": [{"rank": 1, "title": "Beau is Afraid"}, {"rank": 2, "title": "Poor Things"}, {"rank": 3, "title": "Oppenheimer"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Infinity Pool"}, {"rank": 6, "title": "Air"}, {"rank": 7, "title": "The Covenant"}, {"rank": 8, "title": "The Starling Girl"}, {"rank": 9, "title": "The Holdovers"}, {"rank": 10, "title": "The Killer"}]}}, "2024": {"consensus": [{"rank": 1, "title": "The Last Stop In Yuma County", "score": 33}, {"rank": 2, "title": "Anora", "score": 31}, {"rank": 3, "title": "Challengers", "score": 30}, {"rank": 4, "title": "Strange Darling", "score": 27}, {"rank": 5, "title": "Dune: Part Two", "score": 18}, {"rank": 6, "title": "A Real Pain", "score": 14}, {"rank": 7, "title": "The Brutalist", "score": 13}, {"rank": 8, "title": "Caddo Lake", "score": 12}, {"rank": 9, "title": "Nickel Boys", "score": 9}, {"rank": 10, "title": "The Substance", "score": 8}, {"rank": 11, "title": "It's What's Inside", "score": 4}], "rankings": {"Casey": [{"rank": 1, "title": "Anora"}, {"rank": 2, "title": "The Last Stop In Yuma County"}, {"rank": 3, "title": "Strange Darling"}, {"rank": 4, "title": "The Brutalist"}, {"rank": 5, "title": "Nickel Boys"}, {"rank": 6, "title": "Longlegs"}, {"rank": 7, "title": "Dune: Part Two"}, {"rank": 8, "title": "Sing Sing"}, {"rank": 9, "title": "Challengers"}, {"rank": 10, "title": "A Real Pain"}], "Caleb": [{"rank": 1, "title": "Challengers"}, {"rank": 2, "title": "The Last Stop In Yuma County"}, {"rank": 3, "title": "A Real Pain"}, {"rank": 4, "title": "Strange Darling"}, {"rank": 5, "title": "Caddo Lake"}, {"rank": 6, "title": "Rebel Ridge"}, {"rank": 7, "title": "Anora"}, {"rank": 8, "title": "A Different Man"}, {"rank": 9, "title": "It's What's Inside"}, {"rank": 10, "title": "Juror #2"}], "Will": [{"rank": 1, "title": "Anora"}, {"rank": 2, "title": "Challengers"}, {"rank": 3, "title": "Dune: Part Two"}, {"rank": 4, "title": "The Last Stop In Yuma County"}, {"rank": 5, "title": "The Brutalist"}, {"rank": 6, "title": "Caddo Lake"}, {"rank": 7, "title": "The Substance"}, {"rank": 8, "title": "Nickel Boys"}, {"rank": 9, "title": "Strange Darling"}, {"rank": 10, "title": "Furiosa: A Mad Max Saga"}], "Blake": [{"rank": 1, "title": "Strange Darling"}, {"rank": 2, "title": "Challengers"}, {"rank": 3, "title": "The Last Stop In Yuma County"}, {"rank": 4, "title": "Anora"}, {"rank": 5, "title": "Dune: Part Two"}, {"rank": 6, "title": "A Real Pain"}, {"rank": 7, "title": "The Substance"}, {"rank": 8, "title": "The First Omen"}, {"rank": 9, "title": "It's What's Inside"}, {"rank": 10, "title": "Caddo Lake"}]}}, "2025": {"consensus": [{"rank": 1, "title": "One Battle After Another", "score": 38}, {"rank": 2, "title": "Sinners", "score": 33}, {"rank": 3, "title": "Marty Supreme", "score": 25}, {"rank": 4, "title": "Train Dreams", "score": 24}, {"rank": 5, "title": "Bugonia", "score": 23}, {"rank": 6, "title": "Sorry, Baby", "score": 17}, {"rank": 7, "title": "Wake Up Dead Man", "score": 13}, {"rank": 8, "title": "Weapons", "score": 9}, {"rank": 9, "title": "Eddington", "score": 6}, {"rank": 10, "title": "Frankenstein", "score": 3}], "rankings": {"Casey": [{"rank": 1, "title": "Bugonia"}, {"rank": 2, "title": "Sinners"}, {"rank": 3, "title": "One Battle After Another"}, {"rank": 4, "title": "Train Dreams"}, {"rank": 5, "title": "Marty Supreme"}, {"rank": 6, "title": "Nouvelle Vague"}, {"rank": 7, "title": "Wake Up Dead Man"}, {"rank": 8, "title": "Escape From the 21st Century"}, {"rank": 9, "title": "Eddington"}, {"rank": 10, "title": "Caught Stealing"}], "Caleb": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Marty Supreme"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Weapons"}, {"rank": 5, "title": "Wake Up Dead Man"}, {"rank": 6, "title": "Train Dreams"}, {"rank": 7, "title": "Sorry, Baby"}, {"rank": 8, "title": "Superman"}, {"rank": 9, "title": "Eternity"}, {"rank": 10, "title": "Bugonia"}], "Will": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Hamnet"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Train Dreams"}, {"rank": 5, "title": "Sorry, Baby"}, {"rank": 6, "title": "Psycho Therapy"}, {"rank": 7, "title": "Marty Supreme"}, {"rank": 8, "title": "Bugonia"}, {"rank": 9, "title": "Frankenstein"}, {"rank": 10, "title": "No Other Choice"}], "Blake": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Bugonia"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Sorry, Baby"}, {"rank": 5, "title": "Marty Supreme"}, {"rank": 6, "title": "Train Dreams"}, {"rank": 7, "title": "Eddington"}, {"rank": 8, "title": "Wake Up Dead Man"}, {"rank": 9, "title": "Weapons"}, {"rank": 10, "title": "Frankenstein"}]}}};
 const ALIGN={"avg": {"Casey": 0.822, "Caleb": 0.771, "Will": 0.828, "Blake": 0.871}, "yearly": {"Casey": [{"year": "2020", "score": 0.889}, {"year": "2021", "score": 0.683}, {"year": "2022", "score": 0.889}, {"year": "2023", "score": 0.903}, {"year": "2024", "score": 0.694}, {"year": "2025", "score": 0.873}], "Caleb": [{"year": "2020", "score": 0.806}, {"year": "2021", "score": 0.921}, {"year": "2022", "score": 0.825}, {"year": "2023", "score": 0.556}, {"year": "2024", "score": 0.741}, {"year": "2025", "score": 0.778}], "Will": [{"year": "2020", "score": 0.889}, {"year": "2021", "score": 0.75}, {"year": "2022", "score": 0.931}, {"year": "2023", "score": 0.806}, {"year": "2024", "score": 0.753}, {"year": "2025", "score": 0.841}], "Blake": [{"year": "2020", "score": 0.903}, {"year": "2021", "score": 0.833}, {"year": "2022", "score": 0.877}, {"year": "2023", "score": 0.952}, {"year": "2024", "score": 0.819}, {"year": "2025", "score": 0.844}]}, "most_aligned": "Blake", "least_aligned": "Caleb", "best_year": {"Casey": {"year": "2023", "score": 0.903}, "Caleb": {"year": "2021", "score": 0.921}, "Will": {"year": "2022", "score": 0.931}, "Blake": {"year": "2023", "score": 0.952}}, "worst_year": {"Casey": {"year": "2021", "score": 0.683}, "Caleb": {"year": "2023", "score": 0.556}, "Will": {"year": "2021", "score": 0.75}, "Blake": {"year": "2024", "score": 0.819}}, "pairwise": {"Casey_Caleb": 0.665, "Casey_Will": 0.788, "Casey_Blake": 0.81, "Caleb_Will": 0.715, "Caleb_Blake": 0.716, "Will_Blake": 0.831}, "hot_takes": [{"person": "Blake", "year": "2021", "title": "Bo Burnham: Inside", "avg_others_rank": 99.0}, {"person": "Casey", "year": "2021", "title": "The Green Knight", "avg_others_rank": 68.7}, {"person": "Will", "year": "2021", "title": "The Worst Person in the World", "avg_others_rank": 66.7}, {"person": "Caleb", "year": "2023", "title": "The Covenant", "avg_others_rank": 38.3}, {"person": "Will", "year": "2023", "title": "Oppenheimer", "avg_others_rank": 34.7}, {"person": "Caleb", "year": "2022", "title": "Top Gun: Maverick", "avg_others_rank": 6.7}]};
 const KEY="b8b947142d3f178fc8d701e6ef3c0d3b";
-const BP={"2025": "center 20%", "2024": "center 28%", "2023": "center 28%", "2022": "center 28%", "2021": "70% 28%", "2020": "center 15%"};
+const BP={"2025": "center 20%", "2024": "center 28%", "2023": "center 28%", "2022": "center 28%", "2021": "70% 28%", "2020": "center 30%"};
+const CUSTOM={"2025": {"img": "one-battle.jpg", "pos": "center 30%"}, "2024": {"img": "yuma.jpg", "pos": "center 28%"}, "2023": {"img": "beau.jpg", "pos": "center 35%"}, "2021": {"img": "licorice-pizza.jpg", "pos": "60% 28%"}, "2020": {"img": "soul.jpg", "pos": "center 25%"}};
 const P=['Casey','Caleb','Will','Blake'];
 let year='2025',factsDone=false,activeTab='rankings';
-
-const cache=JSON.parse(localStorage.getItem('bc_v9')||'{}');
-function saveCache(){try{localStorage.setItem('bc_v9',JSON.stringify(cache));}catch(e){}}
+const cache=JSON.parse(localStorage.getItem('bc_v10')||'{}');
+function saveCache(){try{localStorage.setItem('bc_v10',JSON.stringify(cache));}catch(e){}}
 const clean=s=>s.replace(/\s*\/\s*.*/,'').replace(/\s*\(.*?\)\s*$/,'').trim();
-
-// Strip year in parens and star ratings from Letterboxd frame-title text
-function cleanTitle(raw){
-  return raw
-    .replace(/\s*\(\d{4}\)\s*$/, '')
-    .replace(/\s*[\u2605\u2606\xbd]+\s*$/, '')
-    .trim();
-}
 
 async function tmdb(title,y){
   const k=y+'|'+title;if(cache[k])return cache[k];
@@ -268,8 +253,16 @@ async function render(){
   el('#heroLabel').textContent=year+' consensus winner';
   el('#heroTitle').textContent=w.title;
   el('#heroScore').textContent=w.score+' consensus points';
-  const h=el('#hero');h.style.backgroundImage='';h.style.backgroundPosition=BP[year]||'center 28%';
-  tmdb(w.title,year).then(x=>{if(x?.backdrop)h.style.backgroundImage=`url(https://image.tmdb.org/t/p/w1280${x.backdrop})`;});
+  const h=el('#hero');
+  h.style.backgroundImage='';
+  const custom=CUSTOM[year];
+  if(custom){
+    h.style.backgroundPosition=custom.pos;
+    h.style.backgroundImage=`url(${custom.img})`;
+  } else {
+    h.style.backgroundPosition=BP[year]||'center 28%';
+    tmdb(w.title,year).then(x=>{if(x?.backdrop)h.style.backgroundImage=`url(https://image.tmdb.org/t/p/w1280${x.backdrop})`;});
+  }
   el('#lists').innerHTML=[['Consensus',d.consensus,true],...P.map(p=>[p,d.rankings[p],false])].map(([n,a,ic])=>makePosterSection(n,a,ic)).join('');
 }
 
@@ -354,51 +347,50 @@ async function loadJson(file){
 function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
   if(updated){const d=new Date(updated);metaEl.textContent='Last synced '+d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
 
-  // Build motw tile placeholder if needed
-  const motwId='motw_tile_'+Math.random().toString(36).slice(2);
+  // MoTW tile — spans 4 columns, same aspect-ratio as a poster card
+  // Shows ONLY for the first movie; that movie is then SKIPPED in the grid below
+  const motwId='mt'+Math.random().toString(36).slice(2);
   const motwTile=showMotw&&movies.length?`<div class="motw-tile" id="${motwId}">
-    <div class="motw-tile-poster"></div>
-    <div class="motw-tile-body">
+    <div class="motw-tile-poster" id="${motwId}_p"></div>
+    <div class="motw-tile-body" id="${motwId}_b">
       <div class="kicker">Movie of the Week</div>
       <h3>${movies[0].title}</h3>
       <div class="meta">Loading…</div>
     </div>
   </div>`:'';
 
-  // Fetch and populate motw tile
   if(showMotw&&movies.length){
     setTimeout(async()=>{
       const m=movies[0];
-      // Full TMDB fetch for motw (need overview, runtime etc.)
-      const q=clean(m.title);
       let info=null;
       try{
+        const q=clean(m.title);
         let u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}${m.year?'&year='+m.year:''}`;
         let j=await(await fetch(u)).json();
         let res=j.results?.[0];
         if(!res){u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}`;j=await(await fetch(u)).json();res=j.results?.[0];}
-        if(res){info=await(await fetch(`https://api.themoviedb.org/3/movie/${res.id}?api_key=${KEY}&append_to_response=credits`)).json();}
+        if(res)info=await(await fetch(`https://api.themoviedb.org/3/movie/${res.id}?api_key=${KEY}&append_to_response=credits`)).json();
       }catch(e){}
-      const tile=document.getElementById(motwId);
-      if(!tile)return;
-      const poster=tile.querySelector('.motw-tile-poster');
-      const body=tile.querySelector('.motw-tile-body');
+      const poster=document.getElementById(motwId+'_p');
+      const body=document.getElementById(motwId+'_b');
+      if(!poster||!body)return;
+      if(info?.poster_path)poster.style.backgroundImage=`url(https://image.tmdb.org/t/p/w342${info.poster_path})`;
       if(info){
-        if(info.poster_path)poster.style.backgroundImage=`url(https://image.tmdb.org/t/p/w342${info.poster_path})`;
         const dirs=(info.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name).join(', ')||'';
         const runtime=info.runtime?`${info.runtime} min`:'';
-        const year=info.release_date?info.release_date.slice(0,4):'';
-        const meta=[year,dirs,runtime].filter(Boolean).join(' · ');
-        body.innerHTML=`
-          <div class="kicker">Movie of the Week</div>
+        const yr=info.release_date?info.release_date.slice(0,4):'';
+        body.innerHTML=`<div class="kicker">Movie of the Week</div>
           <h3>${info.title||m.title}</h3>
-          <div class="meta">${meta}</div>
+          <div class="meta">${[yr,dirs,runtime].filter(Boolean).join(' · ')}</div>
           ${info.overview?`<p class="overview">${info.overview}</p>`:''}`;
       }
     },0);
   }
 
-  gridEl.innerHTML=motwTile+movies.map((m,i)=>{
+  // Grid: skip movies[0] when showing motw tile (it's already shown in the tile)
+  const gridMovies=showMotw&&movies.length?movies.slice(1):movies;
+
+  gridEl.innerHTML=motwTile+gridMovies.map(m=>{
     const pid='lb'+Math.random().toString(36).slice(2);
     setTimeout(async()=>{
       const dt=await tmdbPoster(m.title,m.year);
@@ -425,7 +417,6 @@ async function buildLbxd(){
     const p=await loadJson('movies.json');
     const movies=p.movies||[];
     if(!movies.length)throw new Error('List is empty — run the bookmarklet first.');
-    // Load selections for star badges
     let selTitles=new Set();
     try{const sp=await loadJson('selections.json');(sp.movies||[]).forEach(m=>selTitles.add(m.title.toLowerCase()));}catch(e){}
     renderGrid(grid,meta,movies,p.updated,true,selTitles);
@@ -452,7 +443,6 @@ modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open');};
 buildNav();
 setActiveTab('rankings');
 render();
-
 </script>
 </body>
 </html>
