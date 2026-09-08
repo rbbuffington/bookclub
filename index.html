@@ -31,7 +31,7 @@ button.active,button:hover{background:var(--red);color:white}
 .poster .fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 13px Georgia;color:var(--muted)}
 .badge{position:absolute;top:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:99px;width:29px;height:29px;display:grid;place-items:center;font-weight:900;font-size:13px;z-index:1}
 .pts-badge{position:absolute;bottom:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:6px;padding:2px 6px;font:700 11px Inter;color:var(--gold);z-index:1}
-.star-badge{position:absolute;top:7px;right:7px;font-size:16px;line-height:1;z-index:2;filter:drop-shadow(0 1px 3px #000)}
+.star-badge{position:absolute;top:6px;right:6px;z-index:2;width:24px;height:24px;border-radius:50%;background:rgba(9,9,13,.75);border:1.5px solid var(--red);display:grid;place-items:center;font-size:12px;line-height:1;color:var(--red);box-shadow:0 0 8px rgba(232,75,75,.4)}
 .arrow{display:none;position:absolute;top:0;right:-18px;bottom:0;width:40px;align-items:center;justify-content:center;cursor:pointer;z-index:3}
 .arrow svg{opacity:.45;transition:opacity .15s}
 .arrow:hover svg{opacity:.95}
@@ -66,6 +66,14 @@ button.active,button:hover{background:var(--red);color:white}
 .lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line)}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
 .motw-badge{position:absolute;top:7px;left:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 6px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4;text-align:center}
+.motw-tile{display:grid;grid-template-columns:200px 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:24px;min-height:300px}
+.motw-tile-poster{background:#17171d center/cover no-repeat;min-height:300px}
+.motw-tile-body{padding:28px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.motw-tile-body h3{font:700 clamp(20px,3vw,32px)/1.1 Georgia;margin:0}
+.motw-tile-body .meta{color:var(--muted);font-size:13px}
+.motw-tile-body .overview{color:var(--ink);font-size:14px;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.motw-tile-body .runtime{color:var(--gold);font-weight:700;font-size:13px}
+@media(max-width:600px){.motw-tile{grid-template-columns:1fr}.motw-tile-poster{min-height:200px}}
 .lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
 .lbxd-fallback.titled{color:var(--ink);font-size:13px;background:linear-gradient(145deg,#1e1d2a,#141320)}
 .lbxd-error{color:var(--muted);padding:24px 0;font-size:14px}
@@ -343,24 +351,69 @@ async function loadJson(file){
 
 function renderGrid(gridEl,metaEl,movies,updated,showMotw,selTitles=new Set()){
   if(updated){const d=new Date(updated);metaEl.textContent='Last synced '+d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});}
-  gridEl.innerHTML=movies.map((m,i)=>{
+
+  // Build motw tile placeholder if needed
+  const motwId='motw_tile_'+Math.random().toString(36).slice(2);
+  const motwTile=showMotw&&movies.length?`<div class="motw-tile" id="${motwId}">
+    <div class="motw-tile-poster"></div>
+    <div class="motw-tile-body">
+      <div class="kicker">Movie of the Week</div>
+      <h3>${movies[0].title}</h3>
+      <div class="meta">Loading…</div>
+    </div>
+  </div>`:'';
+
+  // Fetch and populate motw tile
+  if(showMotw&&movies.length){
+    setTimeout(async()=>{
+      const m=movies[0];
+      // Full TMDB fetch for motw (need overview, runtime etc.)
+      const q=clean(m.title);
+      let info=null;
+      try{
+        let u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}${m.year?'&year='+m.year:''}`;
+        let j=await(await fetch(u)).json();
+        let res=j.results?.[0];
+        if(!res){u=`https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}`;j=await(await fetch(u)).json();res=j.results?.[0];}
+        if(res){info=await(await fetch(`https://api.themoviedb.org/3/movie/${res.id}?api_key=${KEY}&append_to_response=credits`)).json();}
+      }catch(e){}
+      const tile=document.getElementById(motwId);
+      if(!tile)return;
+      const poster=tile.querySelector('.motw-tile-poster');
+      const body=tile.querySelector('.motw-tile-body');
+      if(info){
+        if(info.poster_path)poster.style.backgroundImage=`url(https://image.tmdb.org/t/p/w342${info.poster_path})`;
+        const dirs=(info.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name).join(', ')||'';
+        const runtime=info.runtime?`${info.runtime} min`:'';
+        const year=info.release_date?info.release_date.slice(0,4):'';
+        const meta=[year,dirs,runtime].filter(Boolean).join(' · ');
+        body.innerHTML=`
+          <div class="kicker">Movie of the Week</div>
+          <h3>${info.title||m.title}</h3>
+          <div class="meta">${meta}</div>
+          ${info.overview?`<p class="overview">${info.overview}</p>`:''}`;
+      }
+    },0);
+  }
+
+  gridEl.innerHTML=motwTile+movies.map((m,i)=>{
     const pid='lb'+Math.random().toString(36).slice(2);
-    const motw=showMotw&&i===0?`<div class="motw-badge">Movie<br>of the<br>Week</div>`:'';
     setTimeout(async()=>{
       const dt=await tmdbPoster(m.title,m.year);
       const node=document.getElementById(pid);
       if(node){
         const isSel=selTitles.has(m.title.toLowerCase());
         const star=isSel?`<span class="star-badge">★</span>`:'';
+        const motw=showMotw&&i===0?`<div class="motw-badge">Movie<br>of the<br>Week</div>`:'';
         if(dt?.poster){
           node.innerHTML=`<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">${motw}${star}`;
         } else {
-          // No poster found — show titled blank card
           node.innerHTML=`<div class="lbxd-fallback titled">${m.title}</div>${motw}${star}`;
         }
       }
     },0);
-    return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${m.title}</div>${motw}</div>`;
+    const motwBadge=showMotw&&i===0?`<div class="motw-badge">Movie<br>of the<br>Week</div>`:'';
+    return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${m.title}</div>${motwBadge}</div>`;
   }).join('');
 }
 
