@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Club</title>
+<style>
+:root{--bg:#09090d;--card:#17171d;--ink:#f6f3ed;--muted:#9c9aa4;--red:#e84b4b;--gold:#f2b84b;--line:#292831;--green:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -20%,#3c2020,transparent 40%),var(--bg);color:var(--ink);font:15px/1.4 Inter,system-ui,sans-serif}
+.wrap{width:min(1440px,calc(100% - 28px));margin:auto;padding:38px 0 70px}
+header{margin-bottom:24px}
+.kicker{text-transform:uppercase;letter-spacing:.22em;color:var(--red);font-weight:800;font-size:12px}
+h1{font:800 clamp(48px,8vw,98px)/.9 Georgia,serif;letter-spacing:-.06em;margin:8px 0 12px}
+.sub{color:var(--muted)}
+/* NAV — all buttons in one row, no two can be active simultaneously */
+nav{position:sticky;top:8px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;background:#111116e8;backdrop-filter:blur(15px);padding:10px;border:1px solid var(--line);border-radius:16px;margin-bottom:24px}
+button{border:0;background:transparent;color:var(--muted);font:700 14px Inter,system-ui;padding:10px 14px;border-radius:10px;cursor:pointer;transition:background .15s,color .15s}
+button.active,button:hover{background:var(--red);color:white}
+/* HERO */
+.hero{min-height:275px;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:25px;background:#17171d center 28%/cover no-repeat;position:relative;display:flex;align-items:flex-end}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#09090df5 3%,#09090d55 65%,transparent)}
+.heroText{position:relative;z-index:1;padding:28px}
+.hero h2{font:700 clamp(30px,5vw,62px)/1 Georgia;margin:6px 0}
+.score{color:var(--gold);font-weight:800}
+.sectionTitle{display:flex;align-items:center;justify-content:space-between;margin:30px 0 12px}
+.sectionTitle h2{font:700 28px Georgia;margin:0}
+/* CAROUSEL */
+.carouselWrap{position:relative}
+.posterGrid{display:grid;grid-template-columns:repeat(10,minmax(95px,1fr));gap:12px;overflow:hidden}
+.poster{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#282832,#121217);border:1px solid var(--line);box-shadow:0 12px 30px #0006;cursor:pointer;transition:transform .18s}
+.poster:hover{transform:translateY(-4px)}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.poster .fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 13px Georgia;color:var(--muted)}
+.badge{position:absolute;top:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:99px;width:29px;height:29px;display:grid;place-items:center;font-weight:900;font-size:13px;z-index:1}
+.pts-badge{position:absolute;bottom:7px;left:7px;background:#09090dd9;border:1px solid #ffffff25;border-radius:6px;padding:2px 6px;font:700 11px Inter;color:var(--gold);z-index:1}
+.arrow{display:none;position:absolute;top:0;right:-18px;bottom:0;width:40px;align-items:center;justify-content:center;cursor:pointer;z-index:3}
+.arrow svg{opacity:.45;transition:opacity .15s}
+.arrow:hover svg{opacity:.95}
+.arrow.visible{display:flex}
+.arrow-left{right:auto;left:-18px}
+.poster.overflow{display:none}
+/* SECTIONS */
+.facts{display:none}.facts.active{display:block}
+.lbxd-section{display:none}.lbxd-section.active{display:block}
+.rankings.hidden{display:none}
+/* FACTS */
+.factGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.fact h3{margin:5px 0;font:700 22px Georgia}
+.fact .big{font:800 46px Georgia;color:var(--gold)}
+.fact ol{padding-left:20px;color:var(--muted);margin:10px 0 0}
+.fact li{margin:7px 0}
+.fact li b{color:var(--ink)}
+.align-bar-bg{height:6px;background:#2a2a35;border-radius:99px;overflow:hidden;margin:4px 0 3px}
+.align-bar{height:100%;border-radius:99px;background:var(--gold)}
+.align-pct{font-size:12px;color:var(--muted)}
+.winner-tag{display:inline-block;background:rgba(74,222,128,.15);border:1px solid var(--green);color:var(--green);border-radius:6px;font-size:11px;font-weight:800;padding:1px 7px;margin-left:8px;vertical-align:middle}
+.loser-tag{display:inline-block;background:rgba(232,75,75,.15);border:1px solid var(--red);color:var(--red);border-radius:6px;font-size:11px;font-weight:800;padding:1px 7px;margin-left:8px;vertical-align:middle}
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.pair-item{background:#1e1d27;border-radius:10px;padding:12px 14px;font-size:13px}
+.pair-item span{color:var(--muted)}.pair-item b{float:right}
+.loading{color:var(--muted);padding:20px 0}
+/* THE LIST */
+.lbxd-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.lbxd-header a{color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.lbxd-header a:hover{color:var(--ink)}
+.lbxd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px}
+.lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line);cursor:default}
+.lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
+.lbxd-title{position:absolute;bottom:0;left:0;right:0;padding:8px 8px 6px;background:linear-gradient(0deg,#000f,#0009 60%,transparent);font-size:11px;font-weight:700;line-height:1.25}
+.motw-badge{position:absolute;top:7px;right:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.3;text-align:center}
+.lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
+.lbxd-status{color:var(--muted);padding:24px 0;font-size:14px}
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;z-index:20;background:#000b;padding:22px;place-items:center}
+.modal.open{display:grid}
+.modalCard{width:min(850px,100%);background:#15151b;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:260px 1fr}
+.modalPoster{min-height:390px;background:#222 center/cover}
+.modalBody{padding:28px}
+.modalBody h2{font:700 35px Georgia;margin:0 0 8px}
+.close{float:right;background:#292832}
+.rows{margin-top:20px}
+.row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0}
+.attribution{text-align:center;color:var(--muted);margin-top:38px;font-size:12px}
+@media(max-width:1000px){.posterGrid{grid-template-columns:repeat(5,1fr)}.factGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.posterGrid{grid-template-columns:repeat(3,1fr)}.factGrid{grid-template-columns:1fr}.lbxd-grid{grid-template-columns:repeat(3,1fr)}.modalCard{grid-template-columns:1fr}.modalPoster{display:none}nav{position:static}.wrap{padding-top:22px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="kicker">Casey &middot; Caleb &middot; Will &middot; Blake</div>
+    <h1>Book Club</h1>
+    <div class="sub">since January 15, 2021</div>
+  </header>
+  <nav id="nav"></nav>
+
+  <section class="rankings" id="rankings">
+    <div class="hero" id="hero">
+      <div class="heroText">
+        <div class="kicker" id="heroLabel"></div>
+        <h2 id="heroTitle"></h2>
+        <div class="score" id="heroScore"></div>
+      </div>
+    </div>
+    <div id="lists"></div>
+  </section>
+
+  <section class="facts" id="facts">
+    <div class="sectionTitle">
+      <div><div class="kicker">Across 2020&ndash;2025</div><h2>Book Club by the numbers</h2></div>
+    </div>
+    <div class="loading" id="factLoading">Building cast and director statistics from TMDB&hellip;</div>
+    <div id="factGrid"></div>
+  </section>
+
+  <section class="lbxd-section" id="lbxdSection">
+    <div class="lbxd-header">
+      <div><div class="kicker">Letterboxd</div><h2 style="font:700 28px Georgia;margin:4px 0 0">The List</h2></div>
+      <a href="https://boxd.it/iRSXA" target="_blank" rel="noopener">View on Letterboxd &rarr;</a>
+    </div>
+    <div class="lbxd-status" id="lbxdStatus">Loading&hellip;</div>
+    <div class="lbxd-grid" id="lbxdGrid"></div>
+  </section>
+
+  <div class="attribution">This product uses the TMDB API but is not endorsed or certified by TMDB.</div>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modalCard">
+    <div class="modalPoster" id="modalPoster"></div>
+    <div class="modalBody">
+      <button class="close" onclick="modal.classList.remove('open')">Close</button>
+      <div class="kicker" id="modalYear"></div>
+      <h2 id="modalTitle"></h2>
+      <div id="modalMeta" class="sub"></div>
+      <div class="rows" id="modalRows"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {"2020": {"consensus": [{"rank": 1, "title": "Soul", "score": 40}, {"rank": 2, "title": "Promising Young Woman", "score": 32}, {"rank": 3, "title": "Judas and the Black Messiah", "score": 31}, {"rank": 4, "title": "Mank", "score": 26}, {"rank": 5, "title": "The Invisible Man", "score": 24}, {"rank": 6, "title": "Bad Education", "score": 18}, {"rank": 7, "title": "World of Tomorrow 3", "score": 11}, {"rank": 8, "title": "Palm Springs", "score": 8}, {"rank": 9, "title": "Da 5 Bloods", "score": 7}, {"rank": 9, "title": "Ma Rainey's Black Bottom", "score": 7}, {"rank": 9, "title": "The Vast of Night", "score": 7}, {"rank": 12, "title": "Boys State", "score": 6}], "rankings": {"Casey": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Judas and the Black Messiah"}, {"rank": 3, "title": "Promising Young Woman"}, {"rank": 4, "title": "Mank"}, {"rank": 5, "title": "The Vast of Night"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Da 5 Bloods"}, {"rank": 8, "title": "Ma Rainey's Black Bottom"}, {"rank": 9, "title": "Sound of Metal"}, {"rank": 10, "title": "Palm Springs"}], "Caleb": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "The Invisible Man"}, {"rank": 3, "title": "Bad Education"}, {"rank": 4, "title": "Promising Young Woman"}, {"rank": 5, "title": "Mank"}, {"rank": 6, "title": "Judas and the Black Messiah"}, {"rank": 7, "title": "Palm Springs"}, {"rank": 8, "title": "World of Tomorrow 3"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "Fatman"}], "Will": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Judas and the Black Messiah"}, {"rank": 3, "title": "Promising Young Woman"}, {"rank": 4, "title": "Mank"}, {"rank": 5, "title": "Bad Education"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Ma Rainey's Black Bottom"}, {"rank": 8, "title": "Palm Springs"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "World of Tomorrow 3"}], "Blake": [{"rank": 1, "title": "Soul"}, {"rank": 2, "title": "Promising Young Woman"}, {"rank": 3, "title": "Judas and the Black Messiah"}, {"rank": 4, "title": "World of Tomorrow 3"}, {"rank": 5, "title": "Mank"}, {"rank": 6, "title": "The Invisible Man"}, {"rank": 7, "title": "Bad Education"}, {"rank": 8, "title": "Da 5 Bloods"}, {"rank": 9, "title": "Boys State"}, {"rank": 10, "title": "The Vast of Night"}]}}, "2021": {"consensus": [{"rank": 1, "title": "Licorice Pizza", "score": 35}, {"rank": 2, "title": "C'mon C'mon", "score": 27}, {"rank": 3, "title": "Saint Maud", "score": 22}, {"rank": 4, "title": "The Worst Person in the World", "score": 19}, {"rank": 5, "title": "The Green Knight", "score": 13}, {"rank": 5, "title": "Last Night in Soho", "score": 13}, {"rank": 7, "title": "The Last Duel", "score": 10}, {"rank": 7, "title": "West Side Story", "score": 10}, {"rank": 9, "title": "The Power of the Dog", "score": 9}, {"rank": 10, "title": "Old Henry", "score": 4}], "rankings": {"Casey": [{"rank": 1, "title": "The Green Knight"}, {"rank": 2, "title": "Licorice Pizza"}, {"rank": 3, "title": "Saint Maud"}, {"rank": 4, "title": "Drive My Car"}, {"rank": 5, "title": "The Tragedy of Macbeth"}, {"rank": 6, "title": "West Side Story"}, {"rank": 7, "title": "Summer of Soul"}, {"rank": 8, "title": "Old Henry"}, {"rank": 9, "title": "Last Night in Soho"}, {"rank": 10, "title": "C'mon C'mon"}], "Caleb": [{"rank": 1, "title": "Licorice Pizza"}, {"rank": 2, "title": "The Worst Person in the World"}, {"rank": 3, "title": "C'mon C'mon"}, {"rank": 4, "title": "Saint Maud"}, {"rank": 5, "title": "Last Night in Soho"}, {"rank": 6, "title": "The Last Duel"}, {"rank": 7, "title": "No Sudden Move"}, {"rank": 8, "title": "Freaky"}, {"rank": 9, "title": "Nobody"}, {"rank": 10, "title": "Old Henry"}], "Will": [{"rank": 1, "title": "The Worst Person in the World"}, {"rank": 2, "title": "C'mon C'mon"}, {"rank": 3, "title": "Licorice Pizza"}, {"rank": 4, "title": "Don't Look Up"}, {"rank": 5, "title": "Dune"}, {"rank": 6, "title": "West Side Story"}, {"rank": 7, "title": "The Power of the Dog"}, {"rank": 8, "title": "The Green Knight"}, {"rank": 9, "title": "The Last Duel"}, {"rank": 10, "title": "Last Night in Soho"}], "Blake": [{"rank": 1, "title": "Bo Burnham: Inside"}, {"rank": 2, "title": "C'mon C'mon"}, {"rank": 3, "title": "Licorice Pizza"}, {"rank": 4, "title": "Saint Maud"}, {"rank": 5, "title": "Annette"}, {"rank": 6, "title": "The Power of the Dog"}, {"rank": 7, "title": "Last Night in Soho"}, {"rank": 8, "title": "The Last Duel"}, {"rank": 9, "title": "Titane"}, {"rank": 10, "title": "Fear Street Part One: 1994"}]}}, "2022": {"consensus": [{"rank": 1, "title": "Everything Everywhere All At Once", "score": 35}, {"rank": 2, "title": "RRR", "score": 34}, {"rank": 3, "title": "The Banshees of Inisherin", "score": 32}, {"rank": 4, "title": "Decision To Leave", "score": 30}, {"rank": 5, "title": "Nope", "score": 24}, {"rank": 6, "title": "Top Gun: Maverick", "score": 23}, {"rank": 7, "title": "Bones and All", "score": 8}, {"rank": 8, "title": "The Unbearable Weight of Massive Talent", "score": 7}, {"rank": 9, "title": "Babylon", "score": 6}, {"rank": 9, "title": "The Batman", "score": 6}, {"rank": 11, "title": "Apollo 10 1/2", "score": 3}], "rankings": {"Casey": [{"rank": 1, "title": "RRR"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "Decision To Leave"}, {"rank": 4, "title": "The Banshees of Inisherin"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "The Batman"}, {"rank": 7, "title": "Top Gun: Maverick"}, {"rank": 8, "title": "Bones and All"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "Apollo 10 1/2"}], "Caleb": [{"rank": 1, "title": "Top Gun: Maverick"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "The Banshees of Inisherin"}, {"rank": 4, "title": "RRR"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Decision To Leave"}, {"rank": 7, "title": "The Unbearable Weight of Massive Talent"}, {"rank": 8, "title": "Elvis"}, {"rank": 9, "title": "Puss in Boots: The Last Wish"}, {"rank": 10, "title": "Apollo 10 1/2"}], "Will": [{"rank": 1, "title": "RRR"}, {"rank": 2, "title": "Everything Everywhere All At Once"}, {"rank": 3, "title": "Decision To Leave"}, {"rank": 4, "title": "The Banshees of Inisherin"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Top Gun: Maverick"}, {"rank": 7, "title": "All Quiet on the Western Front"}, {"rank": 8, "title": "Aftersun"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "The Batman"}], "Blake": [{"rank": 1, "title": "The Banshees of Inisherin"}, {"rank": 2, "title": "Decision To Leave"}, {"rank": 3, "title": "Everything Everywhere All At Once"}, {"rank": 4, "title": "RRR"}, {"rank": 5, "title": "Nope"}, {"rank": 6, "title": "Bones and All"}, {"rank": 7, "title": "Top Gun: Maverick"}, {"rank": 8, "title": "The Unbearable Weight of Massive Talent"}, {"rank": 9, "title": "Babylon"}, {"rank": 10, "title": "Apollo 10 1/2"}]}}, "2023": {"consensus": [{"rank": 1, "title": "Beau is Afraid", "score": 32}, {"rank": 2, "title": "Poor Things", "score": 31}, {"rank": 3, "title": "Oppenheimer", "score": 27}, {"rank": 4, "title": "Killers of the Flower Moon", "score": 21}, {"rank": 5, "title": "The Covenant", "score": 16}, {"rank": 6, "title": "Air", "score": 14}, {"rank": 6, "title": "Saltburn", "score": 14}, {"rank": 8, "title": "Talk to Me", "score": 12}, {"rank": 9, "title": "Barbie", "score": 9}, {"rank": 10, "title": "The Holdovers", "score": 7}], "rankings": {"Casey": [{"rank": 1, "title": "Beau is Afraid"}, {"rank": 2, "title": "Oppenheimer"}, {"rank": 3, "title": "Poor Things"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Saltburn"}, {"rank": 6, "title": "Talk to Me"}, {"rank": 7, "title": "Asteroid City"}, {"rank": 8, "title": "Barbie"}, {"rank": 9, "title": "The Holdovers"}, {"rank": 10, "title": "Dicks: The Musical"}], "Caleb": [{"rank": 1, "title": "The Covenant"}, {"rank": 2, "title": "Air"}, {"rank": 3, "title": "Sisu"}, {"rank": 4, "title": "Talk to Me"}, {"rank": 5, "title": "John Wick 4"}, {"rank": 6, "title": "Poor Things"}, {"rank": 7, "title": "Beau is Afraid"}, {"rank": 8, "title": "Saltburn"}, {"rank": 9, "title": "D&D: Honor Among Thieves"}, {"rank": 10, "title": "No Hard Feelings"}], "Will": [{"rank": 1, "title": "Oppenheimer"}, {"rank": 2, "title": "Poor Things"}, {"rank": 3, "title": "Beau is Afraid"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Barbie"}, {"rank": 6, "title": "Saltburn"}, {"rank": 7, "title": "American Fiction"}, {"rank": 8, "title": "The Holdovers"}, {"rank": 9, "title": "The Covenant"}, {"rank": 10, "title": "Maestro"}], "Blake": [{"rank": 1, "title": "Beau is Afraid"}, {"rank": 2, "title": "Poor Things"}, {"rank": 3, "title": "Oppenheimer"}, {"rank": 4, "title": "Killers of the Flower Moon"}, {"rank": 5, "title": "Infinity Pool"}, {"rank": 6, "title": "Air"}, {"rank": 7, "title": "The Covenant"}, {"rank": 8, "title": "The Starling Girl"}, {"rank": 9, "title": "The Holdovers"}, {"rank": 10, "title": "The Killer"}]}}, "2024": {"consensus": [{"rank": 1, "title": "The Last Stop In Yuma County", "score": 33}, {"rank": 2, "title": "Anora", "score": 31}, {"rank": 3, "title": "Challengers", "score": 30}, {"rank": 4, "title": "Strange Darling", "score": 27}, {"rank": 5, "title": "Dune: Part Two", "score": 18}, {"rank": 6, "title": "A Real Pain", "score": 14}, {"rank": 7, "title": "The Brutalist", "score": 13}, {"rank": 8, "title": "Caddo Lake", "score": 12}, {"rank": 9, "title": "Nickel Boys", "score": 9}, {"rank": 10, "title": "The Substance", "score": 8}, {"rank": 11, "title": "It's What's Inside", "score": 4}], "rankings": {"Casey": [{"rank": 1, "title": "Anora"}, {"rank": 2, "title": "The Last Stop In Yuma County"}, {"rank": 3, "title": "Strange Darling"}, {"rank": 4, "title": "The Brutalist"}, {"rank": 5, "title": "Nickel Boys"}, {"rank": 6, "title": "Longlegs"}, {"rank": 7, "title": "Dune: Part Two"}, {"rank": 8, "title": "Sing Sing"}, {"rank": 9, "title": "Challengers"}, {"rank": 10, "title": "A Real Pain"}], "Caleb": [{"rank": 1, "title": "Challengers"}, {"rank": 2, "title": "The Last Stop In Yuma County"}, {"rank": 3, "title": "A Real Pain"}, {"rank": 4, "title": "Strange Darling"}, {"rank": 5, "title": "Caddo Lake"}, {"rank": 6, "title": "Rebel Ridge"}, {"rank": 7, "title": "Anora"}, {"rank": 8, "title": "A Different Man"}, {"rank": 9, "title": "It's What's Inside"}, {"rank": 10, "title": "Juror #2"}], "Will": [{"rank": 1, "title": "Anora"}, {"rank": 2, "title": "Challengers"}, {"rank": 3, "title": "Dune: Part Two"}, {"rank": 4, "title": "The Last Stop In Yuma County"}, {"rank": 5, "title": "The Brutalist"}, {"rank": 6, "title": "Caddo Lake"}, {"rank": 7, "title": "The Substance"}, {"rank": 8, "title": "Nickel Boys"}, {"rank": 9, "title": "Strange Darling"}, {"rank": 10, "title": "Furiosa: A Mad Max Saga"}], "Blake": [{"rank": 1, "title": "Strange Darling"}, {"rank": 2, "title": "Challengers"}, {"rank": 3, "title": "The Last Stop In Yuma County"}, {"rank": 4, "title": "Anora"}, {"rank": 5, "title": "Dune: Part Two"}, {"rank": 6, "title": "A Real Pain"}, {"rank": 7, "title": "The Substance"}, {"rank": 8, "title": "The First Omen"}, {"rank": 9, "title": "It's What's Inside"}, {"rank": 10, "title": "Caddo Lake"}]}}, "2025": {"consensus": [{"rank": 1, "title": "One Battle After Another", "score": 38}, {"rank": 2, "title": "Sinners", "score": 33}, {"rank": 3, "title": "Marty Supreme", "score": 25}, {"rank": 4, "title": "Train Dreams", "score": 24}, {"rank": 5, "title": "Bugonia", "score": 23}, {"rank": 6, "title": "Sorry, Baby", "score": 17}, {"rank": 7, "title": "Wake Up Dead Man", "score": 13}, {"rank": 8, "title": "Weapons", "score": 9}, {"rank": 9, "title": "Eddington", "score": 6}, {"rank": 10, "title": "Frankenstein", "score": 3}], "rankings": {"Casey": [{"rank": 1, "title": "Bugonia"}, {"rank": 2, "title": "Sinners"}, {"rank": 3, "title": "One Battle After Another"}, {"rank": 4, "title": "Train Dreams"}, {"rank": 5, "title": "Marty Supreme"}, {"rank": 6, "title": "Nouvelle Vague"}, {"rank": 7, "title": "Wake Up Dead Man"}, {"rank": 8, "title": "Escape From the 21st Century"}, {"rank": 9, "title": "Eddington"}, {"rank": 10, "title": "Caught Stealing"}], "Caleb": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Marty Supreme"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Weapons"}, {"rank": 5, "title": "Wake Up Dead Man"}, {"rank": 6, "title": "Train Dreams"}, {"rank": 7, "title": "Sorry, Baby"}, {"rank": 8, "title": "Superman"}, {"rank": 9, "title": "Eternity"}, {"rank": 10, "title": "Bugonia"}], "Will": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Hamnet"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Train Dreams"}, {"rank": 5, "title": "Sorry, Baby"}, {"rank": 6, "title": "Psycho Therapy"}, {"rank": 7, "title": "Marty Supreme"}, {"rank": 8, "title": "Bugonia"}, {"rank": 9, "title": "Frankenstein"}, {"rank": 10, "title": "No Other Choice"}], "Blake": [{"rank": 1, "title": "One Battle After Another"}, {"rank": 2, "title": "Bugonia"}, {"rank": 3, "title": "Sinners"}, {"rank": 4, "title": "Sorry, Baby"}, {"rank": 5, "title": "Marty Supreme"}, {"rank": 6, "title": "Train Dreams"}, {"rank": 7, "title": "Eddington"}, {"rank": 8, "title": "Wake Up Dead Man"}, {"rank": 9, "title": "Weapons"}, {"rank": 10, "title": "Frankenstein"}]}}};
+const ALIGN = {"avg": {"Casey": 0.822, "Caleb": 0.771, "Will": 0.828, "Blake": 0.871}, "yearly": {"Casey": [{"year": "2020", "score": 0.889}, {"year": "2021", "score": 0.683}, {"year": "2022", "score": 0.889}, {"year": "2023", "score": 0.903}, {"year": "2024", "score": 0.694}, {"year": "2025", "score": 0.873}], "Caleb": [{"year": "2020", "score": 0.806}, {"year": "2021", "score": 0.921}, {"year": "2022", "score": 0.825}, {"year": "2023", "score": 0.556}, {"year": "2024", "score": 0.741}, {"year": "2025", "score": 0.778}], "Will": [{"year": "2020", "score": 0.889}, {"year": "2021", "score": 0.75}, {"year": "2022", "score": 0.931}, {"year": "2023", "score": 0.806}, {"year": "2024", "score": 0.753}, {"year": "2025", "score": 0.841}], "Blake": [{"year": "2020", "score": 0.903}, {"year": "2021", "score": 0.833}, {"year": "2022", "score": 0.877}, {"year": "2023", "score": 0.952}, {"year": "2024", "score": 0.819}, {"year": "2025", "score": 0.844}]}, "most_aligned": "Blake", "least_aligned": "Caleb", "best_year": {"Casey": {"year": "2023", "score": 0.903}, "Caleb": {"year": "2021", "score": 0.921}, "Will": {"year": "2022", "score": 0.931}, "Blake": {"year": "2023", "score": 0.952}}, "worst_year": {"Casey": {"year": "2021", "score": 0.683}, "Caleb": {"year": "2023", "score": 0.556}, "Will": {"year": "2021", "score": 0.75}, "Blake": {"year": "2024", "score": 0.819}}, "pairwise": {"Casey_Caleb": 0.665, "Casey_Will": 0.788, "Casey_Blake": 0.81, "Caleb_Will": 0.715, "Caleb_Blake": 0.716, "Will_Blake": 0.831}, "hot_takes": [{"person": "Blake", "year": "2021", "title": "Bo Burnham: Inside", "avg_others_rank": 99.0}, {"person": "Casey", "year": "2021", "title": "The Green Knight", "avg_others_rank": 68.7}, {"person": "Will", "year": "2021", "title": "The Worst Person in the World", "avg_others_rank": 66.7}, {"person": "Caleb", "year": "2023", "title": "The Covenant", "avg_others_rank": 38.3}, {"person": "Will", "year": "2023", "title": "Oppenheimer", "avg_others_rank": 34.7}, {"person": "Caleb", "year": "2022", "title": "Top Gun: Maverick", "avg_others_rank": 6.7}]};
+const KEY = 'b8b947142d3f178fc8d701e6ef3c0d3b';
+const BACKDROP_POS = {"2025": "center 20%", "2024": "center 28%", "2023": "center 28%", "2022": "center 28%", "2021": "70% 28%", "2020": "center 15%"};
+const P = ['Casey','Caleb','Will','Blake'];
+let year = '2025';
+let factsDone = false;
+let lbxdDone = false;
+// track which tab is active: 'rankings', 'facts', or 'lbxd'
+let activeTab = 'rankings';
+
+const cache = JSON.parse(localStorage.getItem('bookclub_tmdb_v5') || '{}');
+function saveCache() { try { localStorage.setItem('bookclub_tmdb_v5', JSON.stringify(cache)); } catch(e){} }
+
+const clean = s => s.replace(/\s*\/\s*.*/,'').replace(/\s*\(.*?\)\s*$/,'').trim();
+
+async function tmdb(title, y) {
+  const k = y+'|'+title;
+  if (cache[k]) return cache[k];
+  const q = clean(title);
+  try {
+    let u = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}&year=${y}`;
+    let j = await (await fetch(u)).json();
+    let m = j.results?.[0];
+    if (!m) {
+      u = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(q)}`;
+      j = await (await fetch(u)).json();
+      m = j.results?.[0];
+    }
+    if (m) {
+      const d = await (await fetch(`https://api.themoviedb.org/3/movie/${m.id}?api_key=${KEY}&append_to_response=credits`)).json();
+      cache[k] = {
+        id:d.id, title:d.title, poster:d.poster_path, backdrop:d.backdrop_path,
+        date:d.release_date,
+        directors:(d.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name),
+        actors:(d.credits?.cast||[]).slice(0,5).map(x=>x.name)
+      };
+      saveCache(); return cache[k];
+    }
+  } catch(e){}
+  return null;
+}
+
+async function tmdbPosterOnly(title) {
+  const k = 'poster|'+title;
+  if (cache[k]) return cache[k];
+  try {
+    const u = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(title)}`;
+    const j = await (await fetch(u)).json();
+    const m = j.results?.[0];
+    if (m?.poster_path) { cache[k]={poster:m.poster_path}; saveCache(); return cache[k]; }
+  } catch(e){}
+  return null;
+}
+
+function el(s) { return document.querySelector(s); }
+
+function setActiveTab(tab) {
+  activeTab = tab;
+  // Reset all sections
+  el('#rankings').classList.toggle('hidden', tab !== 'rankings');
+  el('#facts').classList.toggle('active', tab === 'facts');
+  el('#lbxdSection').classList.toggle('active', tab === 'lbxd');
+  // Update nav buttons — exactly one active at a time
+  el('#nav').querySelectorAll('button').forEach(b => {
+    const isYear = b.dataset.year;
+    const isTab = b.dataset.tab;
+    if (isYear) b.classList.toggle('active', tab === 'rankings' && b.dataset.year === year);
+    if (isTab) b.classList.toggle('active', b.dataset.tab === tab);
+  });
+}
+
+function buildNav() {
+  const navEl = el('#nav');
+  const yearBtns = Object.keys(DATA).reverse().map(y =>
+    `<button data-year="${y}">${y}</button>`
+  ).join('');
+  navEl.innerHTML = yearBtns +
+    `<button data-tab="facts" style="margin-left:auto">Fun Facts</button>` +
+    `<button data-tab="lbxd">The List</button>`;
+
+  navEl.querySelectorAll('[data-year]').forEach(b => b.onclick = () => {
+    year = b.dataset.year;
+    setActiveTab('rankings');
+    render();
+  });
+  navEl.querySelector('[data-tab="facts"]').onclick = () => {
+    setActiveTab('facts');
+    if (!factsDone) buildFacts();
+  };
+  navEl.querySelector('[data-tab="lbxd"]').onclick = () => {
+    setActiveTab('lbxd');
+    if (!lbxdDone) buildLbxd();
+  };
+}
+
+const sectionPage = {};
+function makePosterSection(label, items, isConsensus) {
+  const id = 'sec_'+label.replace(/\W/g,'_');
+  const visible = items.slice(0,10), overflow = items.slice(10);
+  const posterHTML = (item, i, isOvf) => {
+    const pid = 'p'+Math.random().toString(36).slice(2);
+    const num = item.rank ?? (i+1);
+    const ptsBadge = isConsensus && item.score!=null ? `<span class="pts-badge">${item.score} pts</span>` : '';
+    setTimeout(async()=>{
+      const dt = await tmdb(item.title, year);
+      const node = document.getElementById(pid);
+      if (node && dt?.poster) node.innerHTML = `<img src="https://image.tmdb.org/t/p/w342${dt.poster}" alt="${item.title}"><span class="badge">${num}</span>${ptsBadge}`;
+    }, 0);
+    return `<div class="poster${isOvf?' overflow':''}" id="${pid}" onclick='openMovie(${JSON.stringify(item.title)},${JSON.stringify(year)})'><div class="fallback">${item.title}</div><span class="badge">${num}</span>${ptsBadge}</div>`;
+  };
+  const allPosters = visible.map((x,i)=>posterHTML(x,i,false)).join('') + overflow.map((x,i)=>posterHTML(x,i+10,true)).join('');
+  const rArrow = overflow.length ? `<div class="arrow visible" id="arr_r_${id}" onclick="slideSection('${id}',1)"><svg width="28" height="56" viewBox="0 0 28 56" fill="none"><path d="M7 7L21 28L7 49" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>` : '';
+  const lArrow = `<div class="arrow arrow-left" id="arr_l_${id}" onclick="slideSection('${id}',-1)"><svg width="28" height="56" viewBox="0 0 28 56" fill="none"><path d="M21 7L7 28L21 49" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+  return `<section><div class="sectionTitle"><h2>${label}</h2></div><div class="carouselWrap" id="${id}">${lArrow}<div class="posterGrid" id="grid_${id}">${allPosters}</div>${rArrow}</div></section>`;
+}
+
+function slideSection(id, dir) {
+  if (!(id in sectionPage)) sectionPage[id] = 0;
+  const newPage = sectionPage[id] + dir;
+  if (newPage < 0) return;
+  const grid = document.getElementById('grid_'+id);
+  const all = [...grid.querySelectorAll('.poster')];
+  const vis = all.filter(p=>!p.classList.contains('overflow'));
+  const ovf = all.filter(p=>p.classList.contains('overflow'));
+  if (newPage > 0 && !ovf.length) return;
+  sectionPage[id] = newPage;
+  vis.forEach(p=>p.style.display = newPage===0?'':'none');
+  ovf.forEach(p=>p.style.display = newPage>0?'block':'none');
+  const la=document.getElementById('arr_l_'+id);
+  const ra=document.getElementById('arr_r_'+id);
+  if(la) la.style.display = newPage>0?'flex':'none';
+  if(ra) ra.style.display = (newPage===0&&ovf.length)?'flex':'none';
+}
+
+async function render() {
+  const d = DATA[year], w = d.consensus[0];
+  el('#heroLabel').textContent = year+' consensus winner';
+  el('#heroTitle').textContent = w.title;
+  el('#heroScore').textContent = w.score+' consensus points';
+  const heroEl = el('#hero');
+  heroEl.style.backgroundImage = '';
+  heroEl.style.backgroundPosition = BACKDROP_POS[year]||'center 28%';
+  tmdb(w.title, year).then(x=>{ if(x?.backdrop) heroEl.style.backgroundImage=`url(https://image.tmdb.org/t/p/w1280${x.backdrop})`; });
+  const groups = [['Consensus',d.consensus,true],...P.map(p=>[p,d.rankings[p],false])];
+  el('#lists').innerHTML = groups.map(([n,a,ic])=>makePosterSection(n,a,ic)).join('');
+}
+
+async function openMovie(title, y) {
+  const d=DATA[y], x=await tmdb(title,y);
+  el('#modalTitle').textContent = x?.title||title;
+  el('#modalYear').textContent = y;
+  el('#modalMeta').textContent = [x?.date?.slice(0,4),...(x?.directors||[])].filter(Boolean).join(' · ');
+  el('#modalPoster').style.backgroundImage = x?.poster?`url(https://image.tmdb.org/t/p/w500${x.poster})`:'';
+  const rows=[];
+  const c=d.consensus.find(z=>z.title===title);
+  if(c) rows.push(['Consensus','#'+c.rank+(c.score!=null?' · '+c.score+' pts':'')]);
+  P.forEach(p=>{ const z=d.rankings[p].find(z=>z.title===title); rows.push([p,z?'#'+z.rank:'Not ranked']); });
+  el('#modalRows').innerHTML = rows.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+  el('#modal').classList.add('open');
+}
+
+function pct(s){ return Math.round(s*100); }
+
+async function buildFacts() {
+  factsDone = true;
+  const A = ALIGN;
+  const alignHTML = `<div class="factGrid">
+    <article class="fact">
+      <div class="kicker">Taste vs. consensus</div>
+      <h3>Most aligned with Book Club</h3>
+      <div style="margin-top:16px">${P.map(p=>`
+        <div style="margin-bottom:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <b>${p}${p===A.most_aligned?'<span class="winner-tag">closest</span>':''}</b>
+            <span style="color:var(--muted);font-size:13px">${pct(A.avg[p])}%</span>
+          </div>
+          <div class="align-bar-bg"><div class="align-bar" style="width:${pct(A.avg[p])}%"></div></div>
+          <div class="align-pct">Best: ${A.best_year[p].year} &middot; ${pct(A.best_year[p].score)}%</div>
+        </div>`).join('')}
+      </div>
+    </article>
+    <article class="fact">
+      <div class="kicker">The contrarian</div>
+      <h3>Diverges most from consensus</h3>
+      <div style="margin-top:16px">${P.map(p=>`
+        <div style="margin-bottom:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <b>${p}${p===A.least_aligned?'<span class="loser-tag">most divergent</span>':''}</b>
+            <span style="color:var(--muted);font-size:13px">${pct(A.avg[p])}%</span>
+          </div>
+          <div class="align-bar-bg"><div class="align-bar" style="width:${pct(A.avg[p])}%;background:${p===A.least_aligned?'var(--red)':'var(--gold)'}"></div></div>
+          <div class="align-pct">Worst: ${A.worst_year[p].year} &middot; ${pct(A.worst_year[p].score)}%</div>
+        </div>`).join('')}
+      </div>
+    </article>
+    <article class="fact">
+      <div class="kicker">Who agrees with whom</div>
+      <h3>Pairwise alignment</h3>
+      <div class="pair-grid">${Object.entries(A.pairwise).map(([k,v])=>{
+        const [p1,p2]=k.split('_');
+        return `<div class="pair-item"><span>${p1} &amp; ${p2}</span><b>${pct(v)}%</b></div>`;
+      }).join('')}</div>
+      <div style="margin-top:14px;color:var(--muted);font-size:12px">Average rank difference on shared top-10 picks, 2020&ndash;2025.</div>
+    </article>
+    <article class="fact">
+      <div class="kicker">Boldest #1 picks</div>
+      <h3>Hot takes</h3>
+      <ol>${A.hot_takes.map(x=>`<li><b>${x.title}</b> &middot; ${x.person} (${x.year}) &middot; others avg #${x.avg_others_rank}</li>`).join('')}</ol>
+    </article>
+  </div>`;
+
+  const unique = new Map(); const perfect = [];
+  Object.entries(DATA).forEach(([y,d])=>{
+    d.consensus.forEach(x=>unique.set(y+'|'+x.title,{y,title:x.title}));
+    P.forEach(p=>d.rankings[p].forEach(x=>unique.set(y+'|'+x.title,{y,title:x.title})));
+    if(d.consensus[0]?.score===40) perfect.push(`${d.consensus[0].title} (${y})`);
+  });
+  const dirs={}, acts={};
+  const items=[...unique.values()];
+  for(let i=0;i<items.length;i++){
+    const m=await tmdb(items[i].title,items[i].y);
+    (m?.directors||[]).forEach(n=>dirs[n]=(dirs[n]||0)+1);
+    (m?.actors||[]).forEach(n=>acts[n]=(acts[n]||0)+1);
+    el('#factLoading').textContent=`Analyzing TMDB credits ${i+1} of ${items.length}\u2026`;
+  }
+  const top=o=>Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const totalCons=Object.values(DATA).reduce((n,d)=>n+d.consensus.length,0);
+  el('#factLoading').style.display='none';
+  el('#factGrid').innerHTML = alignHTML + `<div class="factGrid">
+    <article class="fact"><div class="kicker">Archive</div><div class="big">${items.length}</div><h3>Unique movies</h3><div class="sub">Across every ballot and consensus list, 2020&ndash;2025.</div></article>
+    <article class="fact"><div class="kicker">Unanimous</div><div class="big">${perfect.length}</div><h3>Perfect 40-point winners</h3><div class="sub">${perfect.join(', ')||'None'}</div></article>
+    <article class="fact"><div class="kicker">Consensus lists</div><div class="big">${totalCons}</div><h3>Ranked finishes</h3><div class="sub">Including ties retained from the spreadsheet.</div></article>
+    <article class="fact"><div class="kicker">Most frequent directors</div><h3>Behind the camera</h3><ol>${top(dirs).map(x=>`<li><b>${x[0]}</b> &middot; ${x[1]} film${x[1]>1?'s':''}</li>`).join('')}</ol></article>
+    <article class="fact"><div class="kicker">Most frequent actors</div><h3>On screen</h3><ol>${top(acts).map(x=>`<li><b>${x[0]}</b> &middot; ${x[1]} film${x[1]>1?'s':''}</li>`).join('')}</ol></article>
+  </div>`;
+}
+
+async function buildLbxd() {
+  lbxdDone = true;
+  const statusEl = el('#lbxdStatus');
+  const gridEl = el('#lbxdGrid');
+  statusEl.textContent = 'Fetching from Letterboxd\u2026';
+
+  // Letterboxd RSS feed — one feed covers all entries (paged internally but RSS returns all)
+  // The RSS for a list is at /username/list/listname/rss/
+  // Items are in list order. User's list is oldest-first, so we reverse for newest-first display.
+  const rssUrl = 'https://letterboxd.com/rbbuffington/list/book-club/rss/';
+
+  try {
+    const resp = await fetch(rssUrl);
+    if (!resp.ok) throw new Error('HTTP '+resp.status);
+    const text = await resp.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, 'text/xml');
+    const items = [...xml.querySelectorAll('item')];
+
+    if (!items.length) throw new Error('No items found in RSS');
+
+    // Reverse so newest (last in list) is first
+    items.reverse();
+
+    statusEl.style.display = 'none';
+
+    const cards = items.map((item, i) => {
+      const titleEl = item.querySelector('filmTitle') || item.querySelector('*|filmTitle');
+      // Try letterboxd namespace
+      const nsTitle = item.getElementsByTagNameNS('https://letterboxd.com', 'filmTitle')[0]
+                   || item.getElementsByTagNameNS('http://letterboxd.com', 'filmTitle')[0];
+      const rawTitle = nsTitle?.textContent
+                    || titleEl?.textContent
+                    || item.querySelector('title')?.textContent?.replace(/,\s*\d{4}$/,'')
+                    || '';
+      const title = rawTitle.trim();
+      // Try to get poster from description img
+      const desc = item.querySelector('description')?.textContent || '';
+      const imgMatch = desc.match(/src="([^"]+\.jpg[^"]*)"/);
+      const lbxdPoster = imgMatch ? imgMatch[1] : null;
+
+      const pid = 'lb'+Math.random().toString(36).slice(2);
+      const motwBadge = i===0 ? `<div class="motw-badge">Movie<br>of the<br>Week</div>` : '';
+
+      // Render card — use Letterboxd poster if available, else fetch from TMDB
+      setTimeout(async()=>{
+        const node = document.getElementById(pid);
+        if (!node) return;
+        let posterSrc = lbxdPoster;
+        if (!posterSrc) {
+          const dt = await tmdbPosterOnly(title);
+          if (dt?.poster) posterSrc = `https://image.tmdb.org/t/p/w185${dt.poster}`;
+        }
+        if (posterSrc) {
+          node.innerHTML = `<img src="${posterSrc}" alt="${title}">${motwBadge}<div class="lbxd-title">${title}</div>`;
+        }
+      }, 0);
+
+      return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${title||'Loading\u2026'}</div>${motwBadge}</div>`;
+    });
+
+    gridEl.innerHTML = cards.join('');
+
+  } catch(e) {
+    statusEl.textContent = `Couldn't load Letterboxd list: ${e.message}. Try visiting the list directly.`;
+    statusEl.innerHTML += ` <a href="https://boxd.it/iRSXA" target="_blank" rel="noopener" style="color:var(--red)">Open on Letterboxd &rarr;</a>`;
+  }
+}
+
+modal.onclick = e => { if(e.target===modal) modal.classList.remove('open'); };
+buildNav();
+setActiveTab('rankings');
+render();
+</script>
+</body>
+</html>
