@@ -13,11 +13,9 @@ header{margin-bottom:24px}
 .kicker{text-transform:uppercase;letter-spacing:.22em;color:var(--red);font-weight:800;font-size:12px}
 h1{font:800 clamp(48px,8vw,98px)/.9 Georgia,serif;letter-spacing:-.06em;margin:8px 0 12px}
 .sub{color:var(--muted)}
-/* NAV — all buttons in one row, no two can be active simultaneously */
 nav{position:sticky;top:8px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;background:#111116e8;backdrop-filter:blur(15px);padding:10px;border:1px solid var(--line);border-radius:16px;margin-bottom:24px}
-button{border:0;background:transparent;color:var(--muted);font:700 14px Inter,system-ui;padding:10px 14px;border-radius:10px;cursor:pointer;transition:background .15s,color .15s}
+button{border:0;background:transparent;color:var(--muted);font:700 14px Inter,system-ui;padding:10px 14px;border-radius:10px;cursor:pointer}
 button.active,button:hover{background:var(--red);color:white}
-/* HERO */
 .hero{min-height:275px;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:25px;background:#17171d center 28%/cover no-repeat;position:relative;display:flex;align-items:flex-end}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#09090df5 3%,#09090d55 65%,transparent)}
 .heroText{position:relative;z-index:1;padding:28px}
@@ -40,11 +38,13 @@ button.active,button:hover{background:var(--red);color:white}
 .arrow.visible{display:flex}
 .arrow-left{right:auto;left:-18px}
 .poster.overflow{display:none}
-/* SECTIONS */
-.facts{display:none}.facts.active{display:block}
-.lbxd-section{display:none}.lbxd-section.active{display:block}
-.rankings.hidden{display:none}
 /* FACTS */
+.facts{display:none}
+.facts.active{display:block}
+/* LETTERBOXD */
+.lbxd{display:none}
+.lbxd.active{display:block}
+.rankings.hidden{display:none}
 .factGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
 .fact{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
 .fact h3{margin:5px 0;font:700 22px Georgia}
@@ -52,26 +52,24 @@ button.active,button:hover{background:var(--red);color:white}
 .fact ol{padding-left:20px;color:var(--muted);margin:10px 0 0}
 .fact li{margin:7px 0}
 .fact li b{color:var(--ink)}
-.align-bar-bg{height:6px;background:#2a2a35;border-radius:99px;overflow:hidden;margin:4px 0 3px}
-.align-bar{height:100%;border-radius:99px;background:var(--gold)}
-.align-pct{font-size:12px;color:var(--muted)}
+.align-bar-wrap{margin:10px 0 4px}
+.align-bar-bg{height:6px;background:#2a2a35;border-radius:99px;overflow:hidden}
+.align-bar{height:100%;border-radius:99px;background:var(--gold);transition:width .5s}
+.align-pct{font-size:12px;color:var(--muted);margin-top:3px}
 .winner-tag{display:inline-block;background:rgba(74,222,128,.15);border:1px solid var(--green);color:var(--green);border-radius:6px;font-size:11px;font-weight:800;padding:1px 7px;margin-left:8px;vertical-align:middle}
 .loser-tag{display:inline-block;background:rgba(232,75,75,.15);border:1px solid var(--red);color:var(--red);border-radius:6px;font-size:11px;font-weight:800;padding:1px 7px;margin-left:8px;vertical-align:middle}
 .pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .pair-item{background:#1e1d27;border-radius:10px;padding:12px 14px;font-size:13px}
-.pair-item span{color:var(--muted)}.pair-item b{float:right}
+.pair-item span{color:var(--muted)}
+.pair-item b{float:right}
 .loading{color:var(--muted);padding:20px 0}
-/* THE LIST */
-.lbxd-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.lbxd-header a{color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
-.lbxd-header a:hover{color:var(--ink)}
-.lbxd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px}
-.lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line);cursor:default}
+/* LETTERBOXD LIST */
+.lbxd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px;margin-top:16px}
+.lbxd-card{position:relative;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#17171d;border:1px solid var(--line)}
 .lbxd-card img{width:100%;height:100%;object-fit:cover;display:block}
-.lbxd-title{position:absolute;bottom:0;left:0;right:0;padding:8px 8px 6px;background:linear-gradient(0deg,#000f,#0009 60%,transparent);font-size:11px;font-weight:700;line-height:1.25}
-.motw-badge{position:absolute;top:7px;right:7px;background:var(--red);color:white;font-size:9px;font-weight:900;padding:3px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.06em;line-height:1.3;text-align:center}
-.lbxd-fallback{padding:10px;height:100%;display:grid;place-items:center;text-align:center;font:600 12px Georgia;color:var(--muted)}
-.lbxd-status{color:var(--muted);padding:24px 0;font-size:14px}
+.lbxd-title{position:absolute;bottom:0;left:0;right:0;padding:8px;background:linear-gradient(0deg,#000e,transparent);font-size:12px;font-weight:700;line-height:1.2}
+.this-week{position:absolute;top:7px;right:7px;background:var(--red);color:white;font-size:10px;font-weight:800;padding:2px 6px;border-radius:5px;text-transform:uppercase;letter-spacing:.05em}
+.lbxd-loading{color:var(--muted);padding:30px 0}
 /* MODAL */
 .modal{display:none;position:fixed;inset:0;z-index:20;background:#000b;padding:22px;place-items:center}
 .modal.open{display:grid}
@@ -84,7 +82,7 @@ button.active,button:hover{background:var(--red);color:white}
 .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:10px 0}
 .attribution{text-align:center;color:var(--muted);margin-top:38px;font-size:12px}
 @media(max-width:1000px){.posterGrid{grid-template-columns:repeat(5,1fr)}.factGrid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.posterGrid{grid-template-columns:repeat(3,1fr)}.factGrid{grid-template-columns:1fr}.lbxd-grid{grid-template-columns:repeat(3,1fr)}.modalCard{grid-template-columns:1fr}.modalPoster{display:none}nav{position:static}.wrap{padding-top:22px}}
+@media(max-width:600px){.posterGrid{grid-template-columns:repeat(3,1fr)}.factGrid{grid-template-columns:1fr}.modalCard{grid-template-columns:1fr}.modalPoster{display:none}nav{position:static}.wrap{padding-top:22px}}
 </style>
 </head>
 <body>
@@ -115,12 +113,11 @@ button.active,button:hover{background:var(--red);color:white}
     <div id="factGrid"></div>
   </section>
 
-  <section class="lbxd-section" id="lbxdSection">
-    <div class="lbxd-header">
-      <div><div class="kicker">Letterboxd</div><h2 style="font:700 28px Georgia;margin:4px 0 0">The List</h2></div>
-      <a href="https://boxd.it/iRSXA" target="_blank" rel="noopener">View on Letterboxd &rarr;</a>
+  <section class="lbxd" id="lbxd">
+    <div class="sectionTitle">
+      <div><div class="kicker">Letterboxd</div><h2>The full list</h2></div>
     </div>
-    <div class="lbxd-status" id="lbxdStatus">Loading&hellip;</div>
+    <div class="lbxd-loading" id="lbxdLoading">Fetching from Letterboxd&hellip;</div>
     <div class="lbxd-grid" id="lbxdGrid"></div>
   </section>
 
@@ -149,16 +146,14 @@ const P = ['Casey','Caleb','Will','Blake'];
 let year = '2025';
 let factsDone = false;
 let lbxdDone = false;
-// track which tab is active: 'rankings', 'facts', or 'lbxd'
-let activeTab = 'rankings';
 
-const cache = JSON.parse(localStorage.getItem('bookclub_tmdb_v5') || '{}');
-function saveCache() { try { localStorage.setItem('bookclub_tmdb_v5', JSON.stringify(cache)); } catch(e){} }
+const cache = JSON.parse(localStorage.getItem('bookclub_tmdb_v4') || '{}');
+function saveCache() { localStorage.setItem('bookclub_tmdb_v4', JSON.stringify(cache)); }
 
 const clean = s => s.replace(/\s*\/\s*.*/,'').replace(/\s*\(.*?\)\s*$/,'').trim();
 
 async function tmdb(title, y) {
-  const k = y+'|'+title;
+  const k = y + '|' + title;
   if (cache[k]) return cache[k];
   const q = clean(title);
   try {
@@ -178,80 +173,77 @@ async function tmdb(title, y) {
         directors:(d.credits?.crew||[]).filter(x=>x.job==='Director').map(x=>x.name),
         actors:(d.credits?.cast||[]).slice(0,5).map(x=>x.name)
       };
-      saveCache(); return cache[k];
+      saveCache();
+      return cache[k];
     }
-  } catch(e){}
+  } catch(e) {}
   return null;
 }
 
-async function tmdbPosterOnly(title) {
-  const k = 'poster|'+title;
+async function tmdbByTitle(title) {
+  const k = 'any|'+title;
   if (cache[k]) return cache[k];
   try {
     const u = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${encodeURIComponent(title)}`;
     const j = await (await fetch(u)).json();
     const m = j.results?.[0];
-    if (m?.poster_path) { cache[k]={poster:m.poster_path}; saveCache(); return cache[k]; }
+    if (m) { cache[k]={poster:m.poster_path}; saveCache(); return cache[k]; }
   } catch(e){}
   return null;
 }
 
 function el(s) { return document.querySelector(s); }
 
-function setActiveTab(tab) {
-  activeTab = tab;
-  // Reset all sections
-  el('#rankings').classList.toggle('hidden', tab !== 'rankings');
-  el('#facts').classList.toggle('active', tab === 'facts');
-  el('#lbxdSection').classList.toggle('active', tab === 'lbxd');
-  // Update nav buttons — exactly one active at a time
-  el('#nav').querySelectorAll('button').forEach(b => {
-    const isYear = b.dataset.year;
-    const isTab = b.dataset.tab;
-    if (isYear) b.classList.toggle('active', tab === 'rankings' && b.dataset.year === year);
-    if (isTab) b.classList.toggle('active', b.dataset.tab === tab);
-  });
-}
-
 function buildNav() {
   const navEl = el('#nav');
+  const tabs = ['facts','lbxd'];
+  const tabLabels = {'facts':'Fun facts','lbxd':'The list'};
   const yearBtns = Object.keys(DATA).reverse().map(y =>
-    `<button data-year="${y}">${y}</button>`
+    `<button class="${y===year?'active':''}" data-year="${y}">${y}</button>`
   ).join('');
-  navEl.innerHTML = yearBtns +
-    `<button data-tab="facts" style="margin-left:auto">Fun Facts</button>` +
-    `<button data-tab="lbxd">The List</button>`;
+  const tabBtns = tabs.map(t =>
+    `<button data-tab="${t}" style="${t==='facts'?'margin-left:auto':''}">${tabLabels[t]}</button>`
+  ).join('');
+  navEl.innerHTML = yearBtns + tabBtns;
 
   navEl.querySelectorAll('[data-year]').forEach(b => b.onclick = () => {
     year = b.dataset.year;
-    setActiveTab('rankings');
-    render();
+    el('#facts').classList.remove('active');
+    el('#lbxd').classList.remove('active');
+    el('#rankings').classList.remove('hidden');
+    buildNav(); render();
   });
-  navEl.querySelector('[data-tab="facts"]').onclick = () => {
-    setActiveTab('facts');
-    if (!factsDone) buildFacts();
-  };
-  navEl.querySelector('[data-tab="lbxd"]').onclick = () => {
-    setActiveTab('lbxd');
-    if (!lbxdDone) buildLbxd();
-  };
+  tabs.forEach(t => {
+    navEl.querySelector(`[data-tab="${t}"]`).onclick = () => {
+      el('#facts').classList.remove('active');
+      el('#lbxd').classList.remove('active');
+      el(`#${t}`).classList.add('active');
+      el('#rankings').classList.add('hidden');
+      navEl.querySelectorAll('[data-year]').forEach(b=>b.classList.remove('active'));
+      navEl.querySelector(`[data-tab="${t}"]`).classList.add('active');
+      if (t==='facts' && !factsDone) buildFacts();
+      if (t==='lbxd' && !lbxdDone) buildLbxd();
+    };
+  });
 }
 
 const sectionPage = {};
 function makePosterSection(label, items, isConsensus) {
-  const id = 'sec_'+label.replace(/\W/g,'_');
+  const id = 'sec_' + label.replace(/\W/g,'_');
   const visible = items.slice(0,10), overflow = items.slice(10);
+
   const posterHTML = (item, i, isOvf) => {
     const pid = 'p'+Math.random().toString(36).slice(2);
     const num = item.rank ?? (i+1);
-    const ptsBadge = isConsensus && item.score!=null ? `<span class="pts-badge">${item.score} pts</span>` : '';
+    const ptsHtml = isConsensus && item.score!=null ? `<span class="pts-badge">${item.score} pts</span>` : '';
     setTimeout(async()=>{
       const dt = await tmdb(item.title, year);
       const node = document.getElementById(pid);
-      if (node && dt?.poster) node.innerHTML = `<img src="https://image.tmdb.org/t/p/w342${dt.poster}" alt="${item.title}"><span class="badge">${num}</span>${ptsBadge}`;
-    }, 0);
-    return `<div class="poster${isOvf?' overflow':''}" id="${pid}" onclick='openMovie(${JSON.stringify(item.title)},${JSON.stringify(year)})'><div class="fallback">${item.title}</div><span class="badge">${num}</span>${ptsBadge}</div>`;
+      if (node && dt?.poster) node.innerHTML = `<img src="https://image.tmdb.org/t/p/w342${dt.poster}" alt="${item.title}"><span class="badge">${num}</span>${ptsHtml}`;
+    },0);
+    return `<div class="poster${isOvf?' overflow':''}" id="${pid}" onclick='openMovie(${JSON.stringify(item.title)},${JSON.stringify(year)})'><div class="fallback">${item.title}</div><span class="badge">${num}</span>${ptsHtml}</div>`;
   };
+
   const allPosters = visible.map((x,i)=>posterHTML(x,i,false)).join('') + overflow.map((x,i)=>posterHTML(x,i+10,true)).join('');
   const rArrow = overflow.length ? `<div class="arrow visible" id="arr_r_${id}" onclick="slideSection('${id}',1)"><svg width="28" height="56" viewBox="0 0 28 56" fill="none"><path d="M7 7L21 28L7 49" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>` : '';
   const lArrow = `<div class="arrow arrow-left" id="arr_l_${id}" onclick="slideSection('${id}',-1)"><svg width="28" height="56" viewBox="0 0 28 56" fill="none"><path d="M21 7L7 28L21 49" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
@@ -270,10 +262,10 @@ function slideSection(id, dir) {
   sectionPage[id] = newPage;
   vis.forEach(p=>p.style.display = newPage===0?'':'none');
   ovf.forEach(p=>p.style.display = newPage>0?'block':'none');
-  const la=document.getElementById('arr_l_'+id);
-  const ra=document.getElementById('arr_r_'+id);
-  if(la) la.style.display = newPage>0?'flex':'none';
-  if(ra) ra.style.display = (newPage===0&&ovf.length)?'flex':'none';
+  const la = document.getElementById('arr_l_'+id);
+  const ra = document.getElementById('arr_r_'+id);
+  if (la) la.style.display = newPage>0?'flex':'none';
+  if (ra) ra.style.display = (newPage===0&&ovf.length)?'flex':'none';
 }
 
 async function render() {
@@ -290,61 +282,66 @@ async function render() {
 }
 
 async function openMovie(title, y) {
-  const d=DATA[y], x=await tmdb(title,y);
+  const d = DATA[y], x = await tmdb(title, y);
   el('#modalTitle').textContent = x?.title||title;
   el('#modalYear').textContent = y;
   el('#modalMeta').textContent = [x?.date?.slice(0,4),...(x?.directors||[])].filter(Boolean).join(' · ');
   el('#modalPoster').style.backgroundImage = x?.poster?`url(https://image.tmdb.org/t/p/w500${x.poster})`:'';
-  const rows=[];
-  const c=d.consensus.find(z=>z.title===title);
-  if(c) rows.push(['Consensus','#'+c.rank+(c.score!=null?' · '+c.score+' pts':'')]);
+  const rows = [];
+  const c = d.consensus.find(z=>z.title===title);
+  if (c) rows.push(['Consensus','#'+c.rank+(c.score!=null?' · '+c.score+' pts':'')]);
   P.forEach(p=>{ const z=d.rankings[p].find(z=>z.title===title); rows.push([p,z?'#'+z.rank:'Not ranked']); });
   el('#modalRows').innerHTML = rows.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
   el('#modal').classList.add('open');
 }
 
-function pct(s){ return Math.round(s*100); }
+function pct(score) { return Math.round(score*100); }
 
 async function buildFacts() {
   factsDone = true;
   const A = ALIGN;
-  const alignHTML = `<div class="factGrid">
+
+  // Alignment section HTML
+  const alignHTML = `
+  <div class="factGrid">
     <article class="fact">
       <div class="kicker">Taste vs. consensus</div>
       <h3>Most aligned with Book Club</h3>
-      <div style="margin-top:16px">${P.map(p=>`
-        <div style="margin-bottom:14px">
-          <div style="display:flex;align-items:center;justify-content:space-between">
+      <div style="margin:16px 0 6px">
+        ${P.map(p=>`<div style="margin-bottom:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
             <b>${p}${p===A.most_aligned?'<span class="winner-tag">closest</span>':''}</b>
             <span style="color:var(--muted);font-size:13px">${pct(A.avg[p])}%</span>
           </div>
           <div class="align-bar-bg"><div class="align-bar" style="width:${pct(A.avg[p])}%"></div></div>
-          <div class="align-pct">Best: ${A.best_year[p].year} &middot; ${pct(A.best_year[p].score)}%</div>
+          <div class="align-pct">Best year: ${A.best_year[p].year} (${pct(A.best_year[p].score)}%)</div>
         </div>`).join('')}
       </div>
     </article>
     <article class="fact">
       <div class="kicker">The contrarian</div>
       <h3>Diverges most from consensus</h3>
-      <div style="margin-top:16px">${P.map(p=>`
-        <div style="margin-bottom:14px">
-          <div style="display:flex;align-items:center;justify-content:space-between">
+      <div style="margin:16px 0 6px">
+        ${P.map(p=>`<div style="margin-bottom:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
             <b>${p}${p===A.least_aligned?'<span class="loser-tag">most divergent</span>':''}</b>
             <span style="color:var(--muted);font-size:13px">${pct(A.avg[p])}%</span>
           </div>
           <div class="align-bar-bg"><div class="align-bar" style="width:${pct(A.avg[p])}%;background:${p===A.least_aligned?'var(--red)':'var(--gold)'}"></div></div>
-          <div class="align-pct">Worst: ${A.worst_year[p].year} &middot; ${pct(A.worst_year[p].score)}%</div>
+          <div class="align-pct">Worst year: ${A.worst_year[p].year} (${pct(A.worst_year[p].score)}%)</div>
         </div>`).join('')}
       </div>
     </article>
     <article class="fact">
       <div class="kicker">Who agrees with whom</div>
       <h3>Pairwise alignment</h3>
-      <div class="pair-grid">${Object.entries(A.pairwise).map(([k,v])=>{
-        const [p1,p2]=k.split('_');
-        return `<div class="pair-item"><span>${p1} &amp; ${p2}</span><b>${pct(v)}%</b></div>`;
-      }).join('')}</div>
-      <div style="margin-top:14px;color:var(--muted);font-size:12px">Average rank difference on shared top-10 picks, 2020&ndash;2025.</div>
+      <div class="pair-grid">
+        ${Object.entries(A.pairwise).map(([k,v])=>{
+          const [p1,p2]=k.split('_');
+          return `<div class="pair-item"><span>${p1} &amp; ${p2}</span><b>${pct(v)}%</b></div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:14px;color:var(--muted);font-size:12px">Based on average rank difference across shared top-10 picks, 2020&ndash;2025.</div>
     </article>
     <article class="fact">
       <div class="kicker">Boldest #1 picks</div>
@@ -353,13 +350,15 @@ async function buildFacts() {
     </article>
   </div>`;
 
-  const unique = new Map(); const perfect = [];
+  // TMDB stats
+  const unique = new Map();
+  const perfect = [];
   Object.entries(DATA).forEach(([y,d])=>{
     d.consensus.forEach(x=>unique.set(y+'|'+x.title,{y,title:x.title}));
     P.forEach(p=>d.rankings[p].forEach(x=>unique.set(y+'|'+x.title,{y,title:x.title})));
     if(d.consensus[0]?.score===40) perfect.push(`${d.consensus[0].title} (${y})`);
   });
-  const dirs={}, acts={};
+  const dirs={},acts={};
   const items=[...unique.values()];
   for(let i=0;i<items.length;i++){
     const m=await tmdb(items[i].title,items[i].y);
@@ -370,7 +369,9 @@ async function buildFacts() {
   const top=o=>Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,8);
   const totalCons=Object.values(DATA).reduce((n,d)=>n+d.consensus.length,0);
   el('#factLoading').style.display='none';
-  el('#factGrid').innerHTML = alignHTML + `<div class="factGrid">
+
+  el('#factGrid').innerHTML = alignHTML + `
+  <div class="factGrid">
     <article class="fact"><div class="kicker">Archive</div><div class="big">${items.length}</div><h3>Unique movies</h3><div class="sub">Across every ballot and consensus list, 2020&ndash;2025.</div></article>
     <article class="fact"><div class="kicker">Unanimous</div><div class="big">${perfect.length}</div><h3>Perfect 40-point winners</h3><div class="sub">${perfect.join(', ')||'None'}</div></article>
     <article class="fact"><div class="kicker">Consensus lists</div><div class="big">${totalCons}</div><h3>Ranked finishes</h3><div class="sub">Including ties retained from the spreadsheet.</div></article>
@@ -381,76 +382,61 @@ async function buildFacts() {
 
 async function buildLbxd() {
   lbxdDone = true;
-  const statusEl = el('#lbxdStatus');
-  const gridEl = el('#lbxdGrid');
-  statusEl.textContent = 'Fetching from Letterboxd\u2026';
-
-  // Letterboxd RSS feed — one feed covers all entries (paged internally but RSS returns all)
-  // The RSS for a list is at /username/list/listname/rss/
-  // Items are in list order. User's list is oldest-first, so we reverse for newest-first display.
-  const rssUrl = 'https://letterboxd.com/rbbuffington/list/book-club/rss/';
-
-  try {
-    const resp = await fetch(rssUrl);
-    if (!resp.ok) throw new Error('HTTP '+resp.status);
-    const text = await resp.text();
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(text, 'text/xml');
-    const items = [...xml.querySelectorAll('item')];
-
-    if (!items.length) throw new Error('No items found in RSS');
-
-    // Reverse so newest (last in list) is first
-    items.reverse();
-
-    statusEl.style.display = 'none';
-
-    const cards = items.map((item, i) => {
-      const titleEl = item.querySelector('filmTitle') || item.querySelector('*|filmTitle');
-      // Try letterboxd namespace
-      const nsTitle = item.getElementsByTagNameNS('https://letterboxd.com', 'filmTitle')[0]
-                   || item.getElementsByTagNameNS('http://letterboxd.com', 'filmTitle')[0];
-      const rawTitle = nsTitle?.textContent
-                    || titleEl?.textContent
-                    || item.querySelector('title')?.textContent?.replace(/,\s*\d{4}$/,'')
-                    || '';
-      const title = rawTitle.trim();
-      // Try to get poster from description img
-      const desc = item.querySelector('description')?.textContent || '';
-      const imgMatch = desc.match(/src="([^"]+\.jpg[^"]*)"/);
-      const lbxdPoster = imgMatch ? imgMatch[1] : null;
-
-      const pid = 'lb'+Math.random().toString(36).slice(2);
-      const motwBadge = i===0 ? `<div class="motw-badge">Movie<br>of the<br>Week</div>` : '';
-
-      // Render card — use Letterboxd poster if available, else fetch from TMDB
-      setTimeout(async()=>{
-        const node = document.getElementById(pid);
-        if (!node) return;
-        let posterSrc = lbxdPoster;
-        if (!posterSrc) {
-          const dt = await tmdbPosterOnly(title);
-          if (dt?.poster) posterSrc = `https://image.tmdb.org/t/p/w185${dt.poster}`;
-        }
-        if (posterSrc) {
-          node.innerHTML = `<img src="${posterSrc}" alt="${title}">${motwBadge}<div class="lbxd-title">${title}</div>`;
-        }
-      }, 0);
-
-      return `<div class="lbxd-card" id="${pid}"><div class="lbxd-fallback">${title||'Loading\u2026'}</div>${motwBadge}</div>`;
-    });
-
-    gridEl.innerHTML = cards.join('');
-
-  } catch(e) {
-    statusEl.textContent = `Couldn't load Letterboxd list: ${e.message}. Try visiting the list directly.`;
-    statusEl.innerHTML += ` <a href="https://boxd.it/iRSXA" target="_blank" rel="noopener" style="color:var(--red)">Open on Letterboxd &rarr;</a>`;
+  el('#lbxdLoading').textContent = 'Fetching from Letterboxd\u2026';
+  // Letterboxd doesn't allow direct CORS fetching from a browser.
+  // We use a CORS proxy approach - allorigins.win
+  const pages = [
+    'https://letterboxd.com/rbbuffington/list/book-club/',
+    'https://letterboxd.com/rbbuffington/list/book-club/page/2/',
+    'https://letterboxd.com/rbbuffington/list/book-club/page/3/'
+  ];
+  const movies = [];
+  for (let i = 0; i < pages.length; i++) {
+    try {
+      el('#lbxdLoading').textContent = `Fetching Letterboxd page ${i+1} of ${pages.length}\u2026`;
+      const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(pages[i])}`;
+      const resp = await fetch(proxy, {signal: AbortSignal.timeout(10000)});
+      const json = await resp.json();
+      const html = json.contents;
+      // Parse film slugs and titles from Letterboxd HTML
+      const re = /data-film-slug="([^"]+)"[^>]*data-film-name="([^"]+)"/g;
+      let match;
+      while ((match = re.exec(html)) !== null) {
+        const slug = match[1], title = match[2];
+        if (!movies.find(m=>m.slug===slug)) movies.push({slug, title});
+      }
+    } catch(e) {
+      // Try alternate regex pattern
+    }
   }
+
+  if (!movies.length) {
+    el('#lbxdLoading').textContent = "Couldn't load Letterboxd list. Check the console for details.";
+    return;
+  }
+
+  el('#lbxdLoading').style.display = 'none';
+  const grid = el('#lbxdGrid');
+
+  // Render cards — first is "this week"
+  const cards = movies.map((m, i) => {
+    const pid = 'lb'+Math.random().toString(36).slice(2);
+    const thisWeek = i === 0 ? `<div class="this-week">This week</div>` : '';
+    setTimeout(async()=>{
+      const dt = await tmdbByTitle(m.title);
+      const node = document.getElementById(pid);
+      if (node && dt?.poster) {
+        node.innerHTML = `<img src="https://image.tmdb.org/t/p/w185${dt.poster}" alt="${m.title}">
+          ${thisWeek}<div class="lbxd-title">${m.title}</div>`;
+      }
+    }, 0);
+    return `<div class="lbxd-card" id="${pid}"><div class="fallback" style="padding:10px;font-size:12px;color:var(--muted);height:100%;display:grid;place-items:center;text-align:center">${m.title}</div>${thisWeek}</div>`;
+  });
+  grid.innerHTML = cards.join('');
 }
 
 modal.onclick = e => { if(e.target===modal) modal.classList.remove('open'); };
 buildNav();
-setActiveTab('rankings');
 render();
 </script>
 </body>
